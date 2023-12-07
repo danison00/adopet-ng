@@ -1,15 +1,145 @@
-main{
-  height: 100%;
-  width: 100%;
-  background-color: aqua;
-}
-img{
-  width: 50%;
-  height: 100%;
-  object-fit: cover;
+*{
+  font-family: "Lilita one", sans-serif;
 
 }
-.img{
-  display: block;
+
+main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+img {
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  bottom: 0;
+  left: 0%;
+}
+.img-box {
+  width: 50%;
+  height: 100%;
   overflow: hidden;
+  position: relative;
+}
+.content {
+  width: 50%;
+  height: 100%;
+}
+.box-texts {
+  margin-top: 30%;
+  padding-left: 8rem;
+}
+.box-button {
+  margin-top: 1.8rem;
+}
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+span {
+  font-family: "Lilita one", sans-serif;
+  color: #474747;
+}
+.title {
+  font-size: 3rem;
+}
+.subtitle {
+  font-size: 2rem;
+}
+p{
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: #474747;
+  margin-top: 0.6rem;
+}
+
+@media only screen and (max-width: 1400px) {
+  img {
+    border-radius: 50%;
+    top: 10%;
+    left: 0%;
+    width: 90%;
+  }
+
+  .img-box {
+    width: 40%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  .content {
+    width: 60%;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  img {
+    border-radius: 50%;
+    top: 20%;
+    left: 0%;
+  }
+  .img-box {
+    padding-right: 1.5rem;
+  }
+  .box-texts {
+    margin-top: 60%;
+    padding-left: 6rem;
+  }
+}
+@media only screen and (max-width: 800px) {
+  img {
+    top: 25%;
+  }
+}
+@media only screen and (max-width: 700px) {
+  main {
+    flex-direction: column-reverse;
+  }
+  .img-box {
+    padding-top: 1.5rem;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  img {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+    position: static;
+  }
+  .content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .box-texts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 10%;
+    padding-left: 0rem;
+  }
+  .box-button {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .text {
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 430px) {
+
+  .title {
+    font-size: 2.5rem;
+  }
+  .subtitle {
+    font-size: 1.5rem;
+  }
+
 }
