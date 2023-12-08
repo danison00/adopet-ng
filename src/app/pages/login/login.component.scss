@@ -1,0 +1,73 @@
+:host{
+    font-family: 'Lilita One', sans-serif;
+}
+main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+.box-img {
+  width: 30%;
+  height: 100%;
+  background-color: #FFE3B3;
+  overflow: hidden;
+  position: relative;
+}
+.box-login {
+  width: 75%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.text-img{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30%;
+}
+.title{
+    font-size: 2rem;
+}
+span{
+    color: #474747;
+}
+
+.subtitle{
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+
+img {
+  position: absolute;
+  bottom: -80px;
+  object-fit: cover;
+  width: 100%;
+}
+.content{
+    width: 40%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.content span{
+    font-size: 2rem;
+}
+.link{
+    font-size: 1rem !important;
+}
+.social-network{
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+    margin-top: 2.5rem;
+    width: 100%;
+}
+.footer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

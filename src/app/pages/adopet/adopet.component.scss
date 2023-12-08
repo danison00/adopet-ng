@@ -1,6 +1,5 @@
-*{
+* {
   font-family: "Lilita one", sans-serif;
-
 }
 
 main {
@@ -47,33 +46,42 @@ span {
 .subtitle {
   font-size: 2rem;
 }
-p{
-  font-family: 'Inter', sans-serif;
+p {
+  font-family: "Inter", sans-serif;
   font-size: 12px;
   color: #474747;
   margin-top: 0.6rem;
 }
 
 @media only screen and (max-width: 1400px) {
+  main {
+    height: 100%;
+    align-items: center;
+  }
+
   img {
-    border-radius: 50%;
-    top: 10%;
-    left: 0%;
-    width: 90%;
+    position: static;
+    height: 100%;
   }
 
   .img-box {
-    width: 40%;
-    height: 100%;
-    overflow: hidden;
-    position: relative;
+    display: flex;
+    justify-content: center;
   }
-  .content {
-    width: 60%;
-  }
+  // .content {
+  //   width: 60%;
+  // }
 }
+
+
 @media only screen and (max-width: 1000px) {
+  main {
+    height: 70%;
+    margin-top: 2rem;
+  }
+
   img {
+    height: 100%;
     border-radius: 50%;
     top: 20%;
     left: 0%;
@@ -82,13 +90,24 @@ p{
     padding-right: 1.5rem;
   }
   .box-texts {
-    margin-top: 60%;
-    padding-left: 6rem;
+    
+    padding-left: 4rem;
   }
 }
+@media only screen and (max-width: 900px) {
+  main{
+    height: 60%;
+  }
+  img {    
+    height: 100%;
+  }
+}
+
+
 @media only screen and (max-width: 800px) {
-  img {
-    top: 25%;
+  main {
+    height: 60%;
+    margin-top: 2rem;
   }
 }
 @media only screen and (max-width: 700px) {
@@ -134,12 +153,10 @@ p{
   }
 }
 @media only screen and (max-width: 430px) {
-
   .title {
     font-size: 2.5rem;
   }
   .subtitle {
     font-size: 1.5rem;
   }
-
 }

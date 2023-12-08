@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AdopetComponent } from './pages/adopet/adopet.component';
 import { ButtonComponent } from './components/button/button.component';
+import { LoginComponent } from './pages/login/login.component';
+import { InputComponent } from './components/input/input.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     AdopetComponent,
-    ButtonComponent
+    ButtonComponent,
+    LoginComponent,
+    InputComponent
   ],
   imports: [
     BrowserModule,

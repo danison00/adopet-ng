@@ -5,7 +5,7 @@ button{
     border: none;
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
-    
+    font-weight: 700;
     cursor: pointer;
     transition: 0.4s;
   
@@ -22,4 +22,15 @@ button[type="secondary"]{
     color: #B85B2D;
     background-color: #FFF;
 
+}
+button[bg="dark-blue"]{
+    background-color: #566495;
+    
+}
+button[bg="blue"]{
+    background-color: #4385F5;
+    
+}
+button[width100=true]{
+    width: 100%;
 }
