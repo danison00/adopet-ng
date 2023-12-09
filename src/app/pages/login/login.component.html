@@ -1,26 +1,43 @@
 <main>
   <div class="box-img">
-    <div class="text-img">
-        <span class="title">Bem-vindo ao Adopet!</span>
-        <span class="subtitle">Seu melhor amigo espera pela sua adoção!</span>
+    <div class="text">
+      <span class="title">Bem-vindo ao Adopet!</span>
+      <span class="subtitle">Seu melhor amigo espera pela sua adoção!</span>
     </div>
     <div>
-      <img src="/assets/img/cat1.png" alt=""  />
+      <img src="/assets/img/cat1.png" alt="" />
     </div>
   </div>
   <div class="box-login">
+    <div class="text text-login">
+      <img src="/assets/img/cat1.png" alt="" srcset="">
+      <span class="title">Bem-vindo ao Adopet!</span>
+      <span class="subtitle">Seu melhor amigo espera pela sua adoção!</span>
+    </div>
     <div class="content">
-        <span>Fazer Login</span>
+      <span>Fazer Login</span>
+      <form>
         <app-input placeholder="Usuário"></app-input>
         <app-input placeholder="Senha"></app-input>
-        <app-button text="Login" [width100]=true ></app-button>
-        <div class="social-network">
-            <app-button text="Facebook" bg="dark-blue" [width100]=true></app-button>
-            <app-button text="Google"  [width100]=true bg="blue"></app-button>
-          </div>
-          <div class="footer">
-            <span class="link">Ainda não é um membro? <a href="">Cadastre-se já!</a></span>
-          </div>
+        <app-button text="Login" (clickEvent)="onLogin()"  [width100]="true"></app-button>
+      </form>
+      <div class="social-network">
+        <div>
+          <app-button
+            text="Facebook"
+            bg="dark-blue"
+            [width100]="true"
+          ></app-button>
+        </div>
+        <div>
+          <app-button text="Google" bg="blue" [width100]="true" ></app-button>
+        </div>
+      </div>
+      <div class="footer">
+        <span class="link">
+          Ainda não é um membro? <a [routerLink]='["/"]'>Cadastre-se já!</a>
+        </span>
+      </div>
     </div>
   </div>
 </main>

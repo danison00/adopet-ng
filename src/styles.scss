@@ -1,5 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lilita+One&display=swap');
+
+:root {
+  --cor-primaria: #FF9A22;  // Aqui é o hex da cor primária
+  --gray: #474747;  // Bota a cor que quiser pra ser o destaque
+}
+
 *{
   margin: 0;
   padding: 0;
