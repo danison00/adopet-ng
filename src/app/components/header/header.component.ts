@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,8 +8,13 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent {
 
+  @Input() btnLogout = false;
+
   constructor(private router: Router){}
-  onClickEvent(){
+  onClickLogin(){
    this.router.navigate(["/login"]);
   }
+  onClickLogout(){
+    this.router.navigate(["/login"]);
+   }
 }
