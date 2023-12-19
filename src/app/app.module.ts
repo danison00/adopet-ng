@@ -9,6 +9,8 @@ import { ButtonComponent } from './components/button/button.component';
 import { LoginComponent } from './pages/login/login.component';
 import { InputComponent } from './components/input/input.component';
 import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './pages/home_page/home/home.component';
+import { BoxSearchComponent } from './pages/home_page/fragments/box-search/box-search.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { FormsModule } from '@angular/forms';
     AdopetComponent,
     ButtonComponent,
     LoginComponent,
-    InputComponent
+    InputComponent,
+    HomeComponent,
+    BoxSearchComponent
   ],
   imports: [
     BrowserModule,

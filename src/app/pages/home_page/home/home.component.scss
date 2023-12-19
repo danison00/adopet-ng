@@ -1,0 +1,16 @@
+
+main{
+    width: 100%;
+    display: flex;
+    height: calc(100% - 5rem);
+}
+.box-search{
+    width: 18.5rem;
+    height: 100%;
+    background-color: blueviolet;
+}
+.box-animals{
+    flex: 1;
+    height: 100%;
+    background-color: rgb(116, 226, 43);
+}

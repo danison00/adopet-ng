@@ -6,6 +6,8 @@
   <div class="links">
     <a href="">Adotar</a>
     <a href="">Doar Pet</a>
-    <app-button (clickEvent)="onClickEvent()" type="secondary" text="Login"></app-button>
+    <app-button *ngIf="!btnLogout" (clickEvent)="onClickLogin()" type="secondary" text="Login"></app-button>
+    <app-button *ngIf="btnLogout" (clickEvent)="onClickLogout()" type="secondary" text="Logout"></app-button>
+
   </div>
 </header>
