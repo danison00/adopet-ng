@@ -1,8 +1,11 @@
 <app-header [btnLogout]="true"></app-header>
-<main (scroll)="hiddenSearch()">
-  <div class="left" >
+<main>
+  <div class="left">
     <div class="box-search" [ngClass]="{ 'hidden-left': !boxSearchVisible }">
-      <app-box-search></app-box-search>
+      <div class="search">
+        <app-box-search></app-box-search>
+      </div>
+
       <div class="arrow" [ngClass]="{ rotate: !boxSearchVisible }">
         <app-arrow-close (eventClick)="onArrowClick()" />
       </div>

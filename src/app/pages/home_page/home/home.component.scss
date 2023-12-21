@@ -4,9 +4,16 @@ main {
   height: calc(100% - 5rem);
 }
 
+.left {
+  position: relative;
+}
+.search {
+  position: fixed;
+  width: 18.5rem;
+}
 .box-search {
   width: 18.5rem;
-  height: calc(100% + 60px);
+  height: 100%;
   background-color: #fff;
   position: relative;
   overflow: hidden;
@@ -42,12 +49,12 @@ main {
   display: none;
 }
 .hidden-left {
-  transform: translateX(calc(-100% + 27px));
+  transform: translateX(calc(-100% + 35px));
   background-color: transparent;
 }
 .rotate {
   transform: rotate(180deg);
-  right: -0px;
+  right: 0px;
 }
 @media only screen and (max-width: 1300px) {
   .cards-box {
@@ -63,11 +70,11 @@ main {
     width: 100%;
   }
   .box-search {
-    position: fixed;
-    // top: 0rem;
+    position: absolute;
+    top: 0rem;
     left: 0;
   }
-  .arrow{
+  .arrow {
     display: block;
   }
 }
@@ -98,10 +105,10 @@ main {
   }
 }
 @media only screen and (max-width: 400px) {
-    .cards-box {
-      grid-template-columns: repeat(1, 1fr);
-    }
-    .card {
-      width: 250px;
-    }
+  .cards-box {
+    grid-template-columns: repeat(1, 1fr);
   }
+  .card {
+    width: 250px;
+  }
+}

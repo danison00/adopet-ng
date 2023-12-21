@@ -12,8 +12,5 @@ export class HomeComponent {
   onArrowClick(){
     this.boxSearchVisible = !this.boxSearchVisible;
   }
-  hiddenSearch(){
-    alert()
-    if(this.boxSearchVisible) this.boxSearchVisible = false;
-  }
+
 }
