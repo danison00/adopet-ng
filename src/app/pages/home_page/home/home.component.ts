@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  boxSearchVisible = true;
+
+  onArrowClick(){
+    this.boxSearchVisible = !this.boxSearchVisible;
+  }
+  hiddenSearch(){
+    alert()
+    if(this.boxSearchVisible) this.boxSearchVisible = false;
+  }
 }

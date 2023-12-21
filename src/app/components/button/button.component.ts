@@ -8,7 +8,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class ButtonComponent {
 
   @Input() text="Button";
-  @Input() type : "primary" | "secondary" = "primary";
+  @Input() type : "primary" | "secondary" | 'terciary' = "primary";
   @Input() width100 : false | true = false;
   @Input() bg : 'dark-blue' | 'blue' | 'none' = 'none';
 

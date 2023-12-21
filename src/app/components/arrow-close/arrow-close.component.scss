@@ -1,0 +1,23 @@
+:host{
+    &:active {
+        background-color: transparent; // ou qualquer outra cor desejada
+    } 
+}
+div{
+    background-color: #47474713;
+    padding: 15px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .5s;
+    &:hover{
+        background-color: #4747471e;
+
+    }
+    &:active {
+        background-color: transparent; // ou qualquer outra cor desejada
+    }
+}

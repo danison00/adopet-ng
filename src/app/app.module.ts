@@ -11,6 +11,8 @@ import { InputComponent } from './components/input/input.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './pages/home_page/home/home.component';
 import { BoxSearchComponent } from './pages/home_page/fragments/box-search/box-search.component';
+import { CardPerfilAnimalComponent } from './pages/home_page/fragments/card-perfil-animal/card-perfil-animal.component';
+import { ArrowCloseComponent } from './components/arrow-close/arrow-close.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { BoxSearchComponent } from './pages/home_page/fragments/box-search/box-s
     LoginComponent,
     InputComponent,
     HomeComponent,
-    BoxSearchComponent
+    BoxSearchComponent,
+    CardPerfilAnimalComponent,
+    ArrowCloseComponent
   ],
   imports: [
     BrowserModule,

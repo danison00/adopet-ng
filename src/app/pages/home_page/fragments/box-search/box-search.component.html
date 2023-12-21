@@ -1,6 +1,20 @@
-<app-input placeholder="Animal"></app-input>
-<app-input placeholder="sexo"></app-input>
-<app-input placeholder="0 anos" type="number"></app-input>
-<app-input placeholder="12 anos" type="number"></app-input>
-<app-input type="checkbox"></app-input>
-<app-input type="checkbox" placeholder=""></app-input>
+<div class="box">
+  <app-input type="checkbox" labelSelect="Animal" [options]="animals" />
+  <app-input
+    type="checkbox"
+    labelSelect="Sexo"
+    [options]="['Macho', 'Fêmea']"
+  />
+
+  <div class="row">
+    <app-input placeholder="0 anos" type="number" />
+    <app-input placeholder="12 anos" type="number" />
+  </div>
+  <div class="group-checkBox">
+    <app-input type="checkbox" labelCheckBox="Castrado" />
+    <app-input type="checkbox" labelCheckBox="Cuidados especiais" />
+  </div>
+
+  <app-button [type]="'terciary'" text="Procurar" [width100]="true" />
+ 
+</div>

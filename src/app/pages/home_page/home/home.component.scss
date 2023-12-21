@@ -1,16 +1,107 @@
+main {
+  width: 100%;
+  display: flex;
+  height: calc(100% - 5rem);
+}
 
-main{
+.box-search {
+  width: 18.5rem;
+  height: calc(100% + 60px);
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+  transition: 0.4s;
+}
+.box-animals {
+  flex: 1;
+  height: 100%;
+}
+.cards-box {
+  width: 100%;
+  height: calc(100% - 60px);
+  padding: 2rem;
+  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  place-items: center;
+}
+.card {
+  width: 200px;
+}
+.control {
+  background-color: rgb(76, 0, 255);
+  height: 60px;
+  width: 100%;
+}
+.arrow {
+  position: absolute;
+  right: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.3s;
+  display: none;
+}
+.hidden-left {
+  transform: translateX(calc(-100% + 27px));
+  background-color: transparent;
+}
+.rotate {
+  transform: rotate(180deg);
+  right: -0px;
+}
+@media only screen and (max-width: 1300px) {
+  .cards-box {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .card {
+    width: 150px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .box-animals {
+    flex: none;
     width: 100%;
-    display: flex;
-    height: calc(100% - 5rem);
+  }
+  .box-search {
+    position: fixed;
+    // top: 0rem;
+    left: 0;
+  }
+  .arrow{
+    display: block;
+  }
 }
-.box-search{
-    width: 18.5rem;
-    height: 100%;
-    background-color: blueviolet;
+@media only screen and (max-width: 750px) {
+  .cards-box {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .box-animals,
+  main {
+    height: auto;
+  }
 }
-.box-animals{
-    flex: 1;
-    height: 100%;
-    background-color: rgb(116, 226, 43);
+@media only screen and (max-width: 600px) {
+  .cards-box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card {
+    width: 200px;
+  }
 }
+@media only screen and (max-width: 500px) {
+  .cards-box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card {
+    width: 150px;
+  }
+}
+@media only screen and (max-width: 400px) {
+    .cards-box {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .card {
+      width: 250px;
+    }
+  }
