@@ -13,6 +13,7 @@ import { HomeComponent } from './pages/home_page/home/home.component';
 import { BoxSearchComponent } from './pages/home_page/fragments/box-search/box-search.component';
 import { CardPerfilAnimalComponent } from './pages/home_page/fragments/card-perfil-animal/card-perfil-animal.component';
 import { ArrowCloseComponent } from './components/arrow-close/arrow-close.component';
+import { BtnControlComponent } from './pages/home_page/fragments/btn-control/btn-control.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ArrowCloseComponent } from './components/arrow-close/arrow-close.compon
     HomeComponent,
     BoxSearchComponent,
     CardPerfilAnimalComponent,
-    ArrowCloseComponent
+    ArrowCloseComponent,
+    BtnControlComponent
   ],
   imports: [
     BrowserModule,

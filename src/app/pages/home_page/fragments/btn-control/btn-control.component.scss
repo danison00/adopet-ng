@@ -1,0 +1,36 @@
+.box-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.section,
+button {
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section{
+  font-family: 'Inter', sans-serif;
+  background-color: var(--cor-primaria);
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  min-width: 35px;
+  height: 35px;
+  padding: 0 7px;
+  
+}
+button {
+  width: 35px;
+  height: 35px;
+  border: none;
+  &:hover{
+    background-color: #e9e9e9;
+  }
+}
+.reflection {
+  transform: scaleX(-1);
+
+}
