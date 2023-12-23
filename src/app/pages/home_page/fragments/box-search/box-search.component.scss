@@ -1,3 +1,12 @@
+
+*{
+    font-family: 'Inter', sans-serif;
+}
+span{
+    font-size: 25px;
+    color: var(--gray);
+}
+
 .box{
     display: flex;
     flex-direction: column;
