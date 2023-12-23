@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Animal } from 'src/app/models/animal';
 
 @Component({
   selector: 'app-card-perfil-animal',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class CardPerfilAnimalComponent {
 
+  animal: Animal = {
+    nome: "Francisco",
+    caracteristica: "Carinhoso",
+    idade: 5
+  }
 }

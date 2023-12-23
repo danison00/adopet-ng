@@ -1,7 +1,42 @@
-div{
-    aspect-ratio: 1; /* Isso faz com que a célula tenha uma proporção 1:1, tornando-a quadrada */
-    width: 100%;
-    height: 100%;
-    background-color: red;
+* {
+  font-family: "Inter", sans-serif;
+}
+.box{
+  cursor: pointer;
+  transition: 0.2s;
 
+  &:hover{
+    transform: scale(1.02);
+  }
+
+}
+img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  padding: 0;
+}
+.box-img {
+  aspect-ratio: 1; /* Isso faz com que a célula tenha uma proporção 1:1, tornando-a quadrada */
+  width: 100%;
+  height: 100%;
+}
+.box-text {
+  width: 100%;
+  height: auto;
+  padding: 5px 0px 0px 10px;
+  display: flex;
+  flex-direction: column;
+}
+.nome{
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--gray);
+}
+.sub{
+  margin-top: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--gray);
+  line-height: 14.52px;
 }
