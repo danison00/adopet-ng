@@ -1,6 +1,9 @@
-<div class="box">  
+
+
+<div class="box" (click)="clickCard($event)"> 
+
   <div class="box-img">
-    <img src="/assets/img/cao-adoravel-olhando-para-cima-em-um-estudio.jpg" alt="" />
+    <img [src]="animal.imgPath" alt="" />
   </div>
   <div class="box-text">
     
