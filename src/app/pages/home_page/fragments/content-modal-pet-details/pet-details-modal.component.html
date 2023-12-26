@@ -1,0 +1,42 @@
+<div class="box">
+  <div class="closeBtn" (click)="clickClose()">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      height="24"
+      viewBox="0 -960 960 960"
+      width="24"
+      fill="#474747"
+    >
+      <path
+        d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+      />
+    </svg>
+  </div>
+  <div class="img-box">
+    <img src="{{ pet.imgPath }}" alt="" />
+  </div>
+  <div class="row details">
+    <span><strong>Nome:</strong> {{ pet.nome }}</span>
+    <span><strong>Idade: </strong>{{ pet.idade }}</span>
+    <span><strong>Sexo: </strong>{{ pet.sexo }}</span>
+    <span><strong>Castrado: </strong> {{ pet.castrado ? "Sim" : "Não" }}</span>
+  </div>
+  <div>
+    <div>
+      <span>
+        <strong> Descrição: </strong>
+      </span>
+      <div>
+        {{ pet.descricao }}
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur ut
+        vero blanditiis ad exercitationem ab, magnam molestias, debitis mollitia
+        dolores vel quas iure doloribus reiciendis, possimus perferendis cumque
+        culpa corporis?
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <span><strong> Interessados: </strong> 5 </span>
+    <app-button text="Tenho interesse"  (clickEvent)="clickInterest()"/>
+  </div>
+</div>
