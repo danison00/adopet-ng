@@ -17,7 +17,7 @@ main {
     width: 25px;
     height: 25px;
     position: absolute;
-    z-index: 999;
+    z-index: 700;
     right: 15px;
     top: 15px;
     cursor: pointer;
@@ -67,6 +67,9 @@ main {
 }
 .show-left {
   left: 0px !important;
+}
+.scroll-block{
+  overflow: hidden;
 }
 
 @media only screen and (max-width: 1500px) {

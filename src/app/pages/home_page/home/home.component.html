@@ -1,4 +1,18 @@
 <app-header [btnLogout]="true"></app-header>
+
+<app-modal-blank [open]="openModalPetDetails" (eventCloseModal)="openModalPetDetails = false">
+  <app-pet-details-modal
+    [pet]="pet"
+    (eventClose)="openModalPetDetails = false"
+    (eventInterest)="clickInterestIntPet()"
+  />
+</app-modal-blank >
+
+<app-modal-blank [open]="openModalSuccessfulAdoption" (eventCloseModal)="openModalSuccessfulAdoption = false">
+  <app-content-modal-successfull-adoption (eventClose)="openModalSuccessfulAdoption = false" [pet]="pet.nome"/>
+</app-modal-blank>
+
+
 <main>
   <div class="box-search" [ngClass]="{ 'show-left': boxSearchVisible }">
     <div (click)="onArrowClick()" *ngIf="boxSearchVisible" id="closeBtn">
@@ -18,77 +32,20 @@
       <app-box-search (closeEvent)="onArrowClick()"></app-box-search>
     </div>
   </div>
-  <div class="box-animals" [ngClass]="{ blur: boxSearchVisible }">
+  <div class="box-animals" [ngClass]="{ blur: boxSearchVisible || openModalPetDetails }">
     <div class="cards-box">
-      <div class="card">
-        <app-card-perfil-animal />
-      </div>
-      <div class="card">
-        <app-card-perfil-animal />
-      </div>
-      <div class="card">
-        <app-card-perfil-animal />
-      </div>
-      <div class="card">
-        <app-card-perfil-animal />
-      </div>
-      <div class="card">
-        <app-card-perfil-animal />
-      </div>
-      <div class="card">
-        <app-card-perfil-animal />
-      </div>
-      <div class="card">
-        <app-card-perfil-animal />
-      </div>
-      <div class="card">
-        <app-card-perfil-animal />
-      </div>
-      <div class="card">
-        <app-card-perfil-animal />
-      </div>
-      <div class="card">
-        <app-card-perfil-animal />
-      </div>
-      <div class="card">
-        <app-card-perfil-animal />
-      </div>
-      <div class="card">
-        <app-card-perfil-animal />
-      </div>
-      <div class="card">
-        <app-card-perfil-animal />
-      </div>
-      <div class="card">
-        <app-card-perfil-animal />
-      </div>
-      <div class="card">
-        <app-card-perfil-animal />
-      </div>
-      <div class="card">
-        <app-card-perfil-animal />
-      </div>
-      <div class="card">
-        <app-card-perfil-animal />
-      </div>
-      <div class="card">
-        <app-card-perfil-animal />
-      </div>
-      <div class="card">
-        <app-card-perfil-animal />
-      </div>
-      <div class="card">
-        <app-card-perfil-animal />
-      </div>
-      <div class="card">
-        <app-card-perfil-animal />
+      <div class="card" *ngFor="let pet of pets">
+        <app-card-perfil-animal
+          [animal]="pet"
+          (eventClickcard)="onClickCard($event)"
+        />
       </div>
     </div>
     <div class="control">
       <app-btn-control />
     </div>
   </div>
-  <div class="arrow">
+  <div *ngIf="!openModalPetDetails" class="arrow">
     <app-arrow-close (eventClick)="onArrowClick()" />
   </div>
 </main>
