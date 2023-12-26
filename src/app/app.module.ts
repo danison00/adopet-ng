@@ -14,6 +14,10 @@ import { BoxSearchComponent } from './pages/home_page/fragments/box-search/box-s
 import { CardPerfilAnimalComponent } from './pages/home_page/fragments/card-perfil-animal/card-perfil-animal.component';
 import { ArrowCloseComponent } from './components/arrow-close/arrow-close.component';
 import { BtnControlComponent } from './pages/home_page/fragments/btn-control/btn-control.component';
+import { ModalBlankComponent } from './components/modal-blank/modal-blank.component';
+import { PetDetailsModalComponent } from './pages/home_page/fragments/content-modal-pet-details/pet-details-modal.component';
+import { ContentModalSuccessfulAdoptionComponent } from './pages/home_page/fragments/content-modal-successful-register/content-modal-successful-register.component';
+import { ContentModalSuccessfullAdopteComponent } from './pages/home_page/fragments/content-modal-successfull-adoption/content-modal-successfull-adoption.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,11 @@ import { BtnControlComponent } from './pages/home_page/fragments/btn-control/btn
     BoxSearchComponent,
     CardPerfilAnimalComponent,
     ArrowCloseComponent,
-    BtnControlComponent
+    BtnControlComponent,
+    ModalBlankComponent,
+    PetDetailsModalComponent,
+    ContentModalSuccessfulAdoptionComponent,
+    ContentModalSuccessfullAdopteComponent
   ],
   imports: [
     BrowserModule,
