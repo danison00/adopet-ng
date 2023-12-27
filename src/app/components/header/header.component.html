@@ -1,13 +1,42 @@
 <header id="header">
   <div class="logo">
-    <img src="/assets/icons/logo.svg" alt="" srcset="">
+    <span class="menu-icon">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="24"
+        viewBox="0 -960 960 960"
+        width="24"
+        fill="white"
+      >
+        <path
+          d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+        />
+      </svg>
+    </span>
+    <img src="/assets/icons/logo.svg" alt="" srcset="" />
     <span>Adopet</span>
   </div>
   <div class="links">
     <a href="">Adotar</a>
-    <a href="">Doar Pet</a>
-    <app-button *ngIf="!btnLogout" (clickEvent)="onClickLogin()" type="secondary" text="Login"></app-button>
-    <app-button *ngIf="btnLogout" (clickEvent)="onClickLogout()" type="secondary" text="Logout"></app-button>
-
+    <a>Doar Pet</a>
+    <div class="link-menu">
+      <a (click)="clickOpenMenu()" class="link-menu-meus-pets">Meus Pets</a>
+      <app-menu-meus-pets
+        [openMenu]="openMenu"
+        (eventCloseMenu)="openMenu = false"
+      ></app-menu-meus-pets>
+    </div>
+    <app-button
+      *ngIf="!btnLogout"
+      (clickEvent)="onClickLogin()"
+      type="secondary"
+      text="Login"
+    ></app-button>
+    <app-button
+      *ngIf="btnLogout"
+      (clickEvent)="onClickLogout()"
+      type="secondary"
+      text="Logout"
+    ></app-button>
   </div>
 </header>

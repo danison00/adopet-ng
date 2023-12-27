@@ -10,11 +10,16 @@ export class HeaderComponent {
 
   @Input() btnLogout = false;
 
-  constructor(private router: Router){}
-  onClickLogin(){
-   this.router.navigate(["/login"]);
-  }
-  onClickLogout(){
+  openMenu = false;
+
+  constructor(private router: Router) { }
+  onClickLogin() {
     this.router.navigate(["/login"]);
-   }
+  }
+  onClickLogout() {
+    this.router.navigate(["/login"]);
+  }
+  clickOpenMenu() {
+    this.openMenu = !this.openMenu;
+  }
 }

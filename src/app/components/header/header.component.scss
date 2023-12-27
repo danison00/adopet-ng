@@ -12,6 +12,10 @@ span{
   color: #FFF;
   font-family: 'Lilita One', sans-serif;
 }
+.menu-icon{
+  cursor: pointer;
+  margin-right: 1rem;
+}
 .logo{
   display: flex;
   align-items: center;
@@ -23,10 +27,15 @@ span{
   align-items: center;
   gap: 4rem;
 }
+.link-menu{
+  position: relative;
+}
 a{
   text-decoration: none;
   color: #FFF;
   font-size: 1rem;
+  cursor: pointer;
+  
 }
 
 @media only screen and (max-width: 800px) {
