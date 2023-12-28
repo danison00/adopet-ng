@@ -14,6 +14,7 @@ export class HomeComponent {
   boxSearchVisible = false;
   openModalPetDetails = false;
   openModalSuccessfulAdoption = false;
+  openMenuMeusPets = false;
   pets!: Animal[];
 
   pet: Animal = {
@@ -75,6 +76,15 @@ export class HomeComponent {
   clickInterestIntPet() {
     this.openModalPetDetails = false;
     this.openModalSuccessfulAdoption = true;
+  }
+  closeAll() {
+    this.boxSearchVisible
+      = this.openModalPetDetails
+      = this.openModalPetDetails
+      = this.openModalSuccessfulAdoption
+      = this.openMenuMeusPets
+      = false;
+
   }
 
 
