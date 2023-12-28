@@ -1,6 +1,6 @@
 <header id="header">
   <div class="logo">
-    <span class="menu-icon">
+    <span class="menu-icon" (click)="clickOpenMenu()">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         height="24"
@@ -17,14 +17,15 @@
     <span>Adopet</span>
   </div>
   <div class="links">
-    <a href="">Adotar</a>
     <a>Doar Pet</a>
     <div class="link-menu">
-      <a (click)="clickOpenMenu()" class="link-menu-meus-pets">Meus Pets</a>
+      <a (click)="clickOpenMenuMeusPets()" class="link-menu-meus-pets">Meus Pets</a>
+      
       <app-menu-meus-pets
-        [openMenu]="openMenu"
-        (eventCloseMenu)="openMenu = false"
+        [openMenu]="openMenuMeusPets"
+        (eventCloseMenu)="clickCloseMenuMeusPets()"
       ></app-menu-meus-pets>
+    
     </div>
     <app-button
       *ngIf="!btnLogout"

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,7 +10,10 @@ export class HeaderComponent {
 
   @Input() btnLogout = false;
 
-  openMenu = false;
+  @Input() openMenuMeusPets = false;
+  @Output() openMenuMeuspetsEvent = new EventEmitter<void>();
+  @Output() closeMenuMeuspetsEvent = new EventEmitter<void>();
+
 
   constructor(private router: Router) { }
   onClickLogin() {
@@ -19,7 +22,15 @@ export class HeaderComponent {
   onClickLogout() {
     this.router.navigate(["/login"]);
   }
-  clickOpenMenu() {
-    this.openMenu = !this.openMenu;
+  clickOpenMenuMeusPets() {
+    this.openMenuMeusPets = !this.openMenuMeusPets;
+    this.openMenuMeuspetsEvent.emit();
+
+  }
+  clickCloseMenuMeusPets(){
+    this.closeMenuMeuspetsEvent.emit;
+  }
+  clickOpenMenu(){
+
   }
 }
