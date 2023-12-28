@@ -19,6 +19,9 @@ import { PetDetailsModalComponent } from './pages/home_page/fragments/content-mo
 import { ContentModalSuccessfulAdoptionComponent } from './pages/home_page/fragments/content-modal-successful-register/content-modal-successful-register.component';
 import { ContentModalSuccessfullAdopteComponent } from './pages/home_page/fragments/content-modal-successfull-adoption/content-modal-successfull-adoption.component';
 import { MenuHeaderComponent } from './components/header/fragments/menu-meus-pets/menu-meus-pets.component';
+import { MenuWindowComponent } from './pages/home_page/fragments/menu-window/menu-window.component';
+import { MyPetsToAdoptionPageComponent } from './pages/my-pets-to-adoption-page/my-pets-to-adoption-page.component';
+import { HomeOutletComponent } from './pages/home-outlet/home-outlet.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,11 @@ import { MenuHeaderComponent } from './components/header/fragments/menu-meus-pet
     PetDetailsModalComponent,
     ContentModalSuccessfulAdoptionComponent,
     ContentModalSuccessfullAdopteComponent,
-    MenuHeaderComponent
+    MenuHeaderComponent,
+    MenuWindowComponent,
+    MyPetsToAdoptionPageComponent,
+    HomeOutletComponent,
+    
   ],
   imports: [
     BrowserModule,

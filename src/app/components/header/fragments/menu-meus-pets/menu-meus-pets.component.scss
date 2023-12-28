@@ -18,6 +18,8 @@ a{
     color: var(--gray);
     padding: 0.5rem;
     border-radius: 4px;
+    transition: 0.5s;
+    text-decoration: none;
     &:hover{
         background-color: #ff9c223a;
     }

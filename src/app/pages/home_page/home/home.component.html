@@ -1,4 +1,10 @@
-<app-header [btnLogout]="true" [openMenuMeusPets]="openMenuMeusPets" (openMenuMeuspetsEvent)="openMenuMeusPets = true" (closeMenuMeuspetsEvent)="openMenuMeusPets=false"></app-header>
+<app-header
+  [btnLogout]="true"
+  [openMenuMeusPets]="openMenuMeusPets"
+  (openMenuMeuspetsEvent)="openMenuMeusPets = true"
+  (closeMenuMeuspetsEvent)="openMenuMeusPets = false"
+  (eventClickOpenWindowMenu)="openWindowMenu? clickOpenWindowMenu(false): clickOpenWindowMenu(true)"
+/>
 
 <app-modal-blank
   [open]="openModalPetDetails"
@@ -21,8 +27,13 @@
   />
 </app-modal-blank>
 
-<div (click)="closeAll()" *ngIf="boxSearchVisible || openMenuMeusPets" class="touch"></div>
+<div
+  (click)="closeAll()"
+  *ngIf="boxSearchVisible || openMenuMeusPets || openWindowMenu"
+  class="touch"
+></div>
 <main>
+  <app-menu-window [open]="openWindowMenu"></app-menu-window>
   <div class="box-search" [ngClass]="{ 'show-left': boxSearchVisible }">
     <div (click)="onArrowClick()" *ngIf="boxSearchVisible" id="closeBtn">
       <svg
@@ -45,7 +56,7 @@
     class="box-animals"
     [ngClass]="{
       blur:
-        boxSearchVisible || openModalPetDetails || openModalSuccessfulAdoption
+        boxSearchVisible || openModalPetDetails || openModalSuccessfulAdoption || openWindowMenu
     }"
   >
     <div class="cards-box">
@@ -64,3 +75,4 @@
     <app-arrow-close (eventClick)="onArrowClick()" />
   </div>
 </main>
+<router-outlet></router-outlet>

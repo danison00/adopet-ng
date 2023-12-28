@@ -15,6 +15,7 @@ export class HomeComponent {
   openModalPetDetails = false;
   openModalSuccessfulAdoption = false;
   openMenuMeusPets = false;
+  openWindowMenu = false;
   pets!: Animal[];
 
   pet: Animal = {
@@ -41,12 +42,15 @@ export class HomeComponent {
     await this.scrollTop();
     this.setBoxSearchVisible();
   }
+
   @HostListener('window:scroll', ['$event'])
   private onScroll(event: Event): void {
-    const componentTop = document.getElementById('closeBtn');
+    const componentTop = document.getElementById('header');
     if (componentTop) {
-      if (componentTop.getBoundingClientRect().top < 0)
-        this.boxSearchVisible = !this.boxSearchVisible;
+      if (componentTop.getBoundingClientRect().top < 0){
+
+        this.boxSearchVisible = this.openWindowMenu = false;
+      }
 
     }
   }
@@ -77,15 +81,21 @@ export class HomeComponent {
     this.openModalPetDetails = false;
     this.openModalSuccessfulAdoption = true;
   }
-  closeAll() {
+  async closeAll() {
+    
     this.boxSearchVisible
       = this.openModalPetDetails
       = this.openModalPetDetails
       = this.openModalSuccessfulAdoption
       = this.openMenuMeusPets
+      = this.openWindowMenu
       = false;
 
+    
   }
-
+  async clickOpenWindowMenu(open: boolean){
+    await this.closeAll();
+    this.openWindowMenu = open;
+  }
 
 }

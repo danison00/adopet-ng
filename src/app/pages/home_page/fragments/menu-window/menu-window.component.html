@@ -1,0 +1,17 @@
+<div [ngClass]="{ hidden: !open }" class="box">
+  <div class="content">
+    <a>Doar Pet</a>
+    <div class="link-menu-meus-pets-window">
+      <a id="link-box" (click)="clickOpenBox()"
+        >Meus pets <img src="assets/icons/arrow-rigth.svg" alt="" srcset=""
+      /></a>
+      <div *ngIf="openBox" class="box-menu-meus-pets-window">
+        <div class="content-box">
+          <a >Interesses em adotar</a>
+          <a [routerLink]="['/home/meus-pets/para-adocao']">Para Adoção</a>
+        </div>
+      </div>
+    </div>
+    <a>Meus Dados</a>
+  </div>
+</div>

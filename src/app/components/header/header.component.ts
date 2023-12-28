@@ -13,6 +13,8 @@ export class HeaderComponent {
   @Input() openMenuMeusPets = false;
   @Output() openMenuMeuspetsEvent = new EventEmitter<void>();
   @Output() closeMenuMeuspetsEvent = new EventEmitter<void>();
+  @Output() eventClickOpenWindowMenu = new EventEmitter<void>();
+
 
 
   constructor(private router: Router) { }
@@ -28,9 +30,9 @@ export class HeaderComponent {
 
   }
   clickCloseMenuMeusPets(){
-    this.closeMenuMeuspetsEvent.emit;
+    this.closeMenuMeuspetsEvent.emit();
   }
   clickOpenMenu(){
-
+    this.eventClickOpenWindowMenu.emit();
   }
 }
