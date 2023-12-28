@@ -12,17 +12,13 @@
     flex-direction: column;
     border: 1px solid #47474734;
 }
-.box{
-    width: 100dvh;
-    height: 100dvh;
-    background-color: aqua;    
-}
+
 a{
     cursor: pointer;
     color: var(--gray);
     padding: 0.5rem;
     border-radius: 4px;
     &:hover{
-        background-color: #302f2f13;
+        background-color: #ff9c223a;
     }
 }
