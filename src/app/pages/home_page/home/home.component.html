@@ -25,12 +25,10 @@
 ></app-touch-invisible>
 
 <main>
-  <div class="box-search" [ngClass]="{ 'show-left': boxSearchVisible }">
-    <app-box-search
-      (closeEvent)="onLupaClick()"
-      [open]="boxSearchVisible"
-    ></app-box-search>
-  </div>
+  <app-box-search
+    (closeEvent)="boxSearchVisible = false"
+    [open]="boxSearchVisible"
+  ></app-box-search>
   <div
     class="box-animals"
     [ngClass]="{

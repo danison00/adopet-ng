@@ -1,4 +1,4 @@
-<div *ngIf="open" class="box">
+<div [ngClass]="{open: open}" class="box">
   <div (click)="onCloseClick()">
    <img src="/assets/icons/x-close.svg" alt="" srcset="">
   </div>

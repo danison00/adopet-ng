@@ -5,28 +5,6 @@ main {
   position: relative;
 }
 
-.box-search {
-  width: 18.5rem;
-  height: 100%;
-  background-color: #ffffff;
-  overflow: hidden;
-  transition: 0.4s;
-  border-right: 1px solid #4747471a;
-
-  & #closeBtn {
-    width: 25px;
-    height: 25px;
-    position: absolute;
-    z-index: 700;
-    right: 15px;
-    top: 15px;
-    cursor: pointer;
-    border-radius: 4px;
-    &:hover {
-      background-color: #4747471a;
-    }
-  }
-}
 
 .box-animals {
   flex: 1;
@@ -61,9 +39,7 @@ main {
   transition: 0.3s;
   display: none;
 }
-.show-left {
-  left: 0px !important;
-}
+
 .scroll-block {
   overflow: hidden;
 }
