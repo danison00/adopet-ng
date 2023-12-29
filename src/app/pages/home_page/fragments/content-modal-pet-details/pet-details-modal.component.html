@@ -37,6 +37,6 @@
   </div>
   <div class="row">
     <span><strong> Interessados: </strong> 5 </span>
-    <app-button text="Tenho interesse"  (clickEvent)="clickInterest()"/>
+    <app-button *ngIf="showBtn" text="Tenho interesse"  (clickEvent)="clickInterest()"/>
   </div>
 </div>

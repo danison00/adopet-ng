@@ -9,6 +9,7 @@ import { Animal } from 'src/app/models/animal';
 export class PetDetailsModalComponent {
 
   @Input() pet!: Animal;
+  @Input() showBtn = true;
   @Output() eventClose = new EventEmitter<void>();
   @Output() eventInterest = new EventEmitter<void>();
 
