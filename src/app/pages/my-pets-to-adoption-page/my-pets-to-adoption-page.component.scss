@@ -1,76 +1,53 @@
 .cards-box {
-    width: 100%;
-    height: auto;
-    padding: 2rem 5rem 0 5rem;
-    gap: 2rem;
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    place-items: center;
+  width: 100%;
+  height: auto;
+  padding: 2rem 5rem 5rem 5rem;
+  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  place-items: center;
 }
-.box-btn{
+
+.box-btn {
   margin-top: 0.5rem;
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: 0.5rem;
+}
+.no-pets-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100dvh - 8rem);
+  align-items: center;
+  & img {
+    width: 200px;
+    height: auto;
+  }
+  & span {
+    font-family: "Lilita One", sans-serif;
+    font-size: 25px;
+    color: #091d24;
+  }
 }
 
-@media only screen and (max-width: 1500px) {
-  .cards-box {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .card {
-    width: 300px;
-  }
-}
-
-@media only screen and (max-width: 1300px) {
-  .card {
-    width: 250px;
-  }
-}
 @media only screen and (max-width: 1200px) {
   .cards-box {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .card {
-    width: 310px;
-  }
-}
-@media only screen and (max-width: 1000px) {
-  .cards-box {
     grid-template-columns: repeat(3, 1fr);
-  }
-  .card {
-    width: 250px;
+    padding: 2rem 3rem 3rem 3rem;
   }
 }
-@media only screen and (max-width: 900px) {
-  .cards-box {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .card {
-    width: 350px;
-  }
-}
+
 @media only screen and (max-width: 800px) {
   .cards-box {
     grid-template-columns: repeat(2, 1fr);
   }
-  .card {
-    width: 300px;
-  }
 }
-@media only screen and (max-width: 700px) {
-  .card {
-    width: 260px;
-  }
-}
+
 @media only screen and (max-width: 600px) {
   .cards-box {
     grid-template-columns: repeat(1, 1fr);
-  }
-  .card {
-    width: 98%;
+    padding: 2rem 1.5rem 2rem 1.5rem;
+
   }
 }
-

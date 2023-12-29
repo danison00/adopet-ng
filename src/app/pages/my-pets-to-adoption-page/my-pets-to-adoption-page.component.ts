@@ -11,17 +11,19 @@ export class MyPetsToAdoptionPageComponent {
 
   openModalPetDetails = false;
   pet: Animal = {
-    caracteristica: "fofo",
+
+    caracteristica: "",
     castrado: true,
     cuidadosEspeciais: false,
     descricao: "",
     idade: 17,
     imgPath: "",
     nome: "",
-    sexo: "macho"
+    sexo: ""
   };
   pets: Animal[] = [
     {
+      id: 1,
       imgPath: 'https://media.istockphoto.com/id/1482199015/pt/foto/happy-puppy-welsh-corgi-14-weeks-old-dog-winking-panting-and-sitting-isolated-on-white.jpg?s=612x612&w=0&k=20&c=XI-fFXTXEU4UbQtGwM_vWzBB4F17W4dlPtXL4wr2dmE=',
       nome: 'Max',
       sexo: 'Masculino',
@@ -32,6 +34,7 @@ export class MyPetsToAdoptionPageComponent {
       descricao: 'Um buldogue brincalhão.'
     },
     {
+      id: 2,
       imgPath: 'https://blog-static.petlove.com.br/wp-content/uploads/2021/07/Dachshund-filhote-3.jpg',
       nome: 'Mia',
       sexo: 'Feminino',
@@ -42,6 +45,7 @@ export class MyPetsToAdoptionPageComponent {
       descricao: 'Uma pastor alemã inteligente.'
     },
     {
+      id: 3,
       imgPath: 'https://www.tendaatacado.com.br/dicas/wp-content/uploads/2023/04/topo-como-tirar-pelo-de-gato-do-sofa.jpg',
       nome: 'Charlie',
       sexo: 'Masculino',
@@ -52,6 +56,7 @@ export class MyPetsToAdoptionPageComponent {
       descricao: 'Um dálmata amigável e energético.'
     },
     {
+      id: 4,
       imgPath: 'https://www.petsupport.com.br/wp-content/uploads/2021/09/necessidades-dos-gatos-1-1024x576.jpg',
       nome: 'Lucy',
       sexo: 'Feminino',
@@ -62,6 +67,7 @@ export class MyPetsToAdoptionPageComponent {
       descricao: 'Uma vira-lata adorável.'
     },
     {
+      id: 5,
       imgPath: 'https://walac.pe/wp-content/uploads/2021/02/gato-marron_0.jpg',
       nome: 'Cooper',
       sexo: 'Masculino',
@@ -72,6 +78,14 @@ export class MyPetsToAdoptionPageComponent {
       descricao: 'Um golden retriever brincalhão.'
     }
   ];
+
+  deletePet(id: number | undefined) {
+    for (let index = 0; index < this.pets.length; index++)
+      if (this.pets.at(index)?.id === id)
+        this.pets.splice(index, 1);
+
+
+  }
 
   viewPetDetails(pet: Animal) {
     this.pet = pet;

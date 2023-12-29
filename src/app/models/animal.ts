@@ -1,4 +1,5 @@
 export interface Animal{
+    id?: number;
     imgPath: string,
     nome: string,
     sexo: string,
