@@ -1,3 +1,10 @@
-<button type="button" (click)="emittClick()" [attr.type]="type" [attr.width100]="width100" [attr.bg]="bg">
+<button
+  type="button"
+  (click)="emittClick()"
+  [attr.type]="type"
+  [attr.width100]="width100"
+  [attr.hoverScale] = "hoverScale"
+  [attr.bg]="bg"
+>
   {{ text }}
 </button>

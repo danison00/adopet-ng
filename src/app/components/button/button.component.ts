@@ -8,7 +8,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class ButtonComponent {
 
   @Input() text="Button";
-  @Input() type : "primary" | "secondary" | 'terciary' = "primary";
+  @Input() type : "primary" | "secondary" | 'terciary' | 'ligth-blue' | 'ligth-orange' | 'ligth-red' = "primary";
+  @Input() hoverScale = true;
   @Input() width100 : false | true = false;
   @Input() bg : 'dark-blue' | 'blue' | 'none' = 'none';
 
