@@ -1,15 +1,14 @@
-
-
-<div class="box" (click)="clickCard($event)"> 
-
+<div class="box" (click)="clickCard($event)" [attr.hoverScale]="hoverScale" [attr.cursorPointer]="cursorPointer">
   <div class="box-img">
     <img [src]="animal.imgPath" alt="" />
   </div>
   <div class="box-text">
-    
-    <span class="nome">{{animal.nome}}</span>
-    <span class="sub">{{animal.caracteristica}}, {{animal.idade}} anos</span>
-    
+    <span class="nome">{{ animal.nome }}</span>
+    <span class="sub"
+      >{{ animal.caracteristica }}, {{ animal.idade }} anos</span
+    >
   </div>
-  
+  <div class="box-btn">
+    <ng-content> </ng-content>
+  </div>
 </div>

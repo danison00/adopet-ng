@@ -8,6 +8,9 @@ import { Animal } from 'src/app/models/animal';
 })
 export class CardPerfilAnimalComponent {
 
+  @Input() hoverScale = true;
+  @Input() cursorPointer = true;
+
   @Input() animal: Animal = {
     imgPath: "/assets/img/cao-adoravel-olhando-para-cima-em-um-estudio.jpg",
     nome: "Francisco",
