@@ -1,112 +1,97 @@
-header{
-  background-color: #FF9A22;
+header {
+  background-color: #ff9a22;
   height: 5rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2.0rem;
+  padding: 0 2rem;
 }
-span{
-  font-size: 32px;
-  color: #FFF;
-  font-family: 'Lilita One', sans-serif;
-}
-.menu-icon{
-  cursor: pointer;
-  margin-right: 1rem;
-  display: none;
-  height: 30px;
-  & svg{
-    width: 30px !important;
-    height: 30px !important;
-
-  }
+span {
+  margin-top: 10px;
+  font-size: 35px;
+  color: #fff;
+  font-family: "Lilita One", sans-serif;
 }
 
-
-.logo{
+.logo {
   display: flex;
   align-items: center;
   gap: 1rem;
-
-  & img{
-    height: 30px !important;
-  }
+  cursor: pointer;
 }
-.box-links{
+
+.menu-icon {
+  margin-right: 1rem;
+  display: none;
+  height: 35px !important;
+}
+.logo-icon{
+  height: 35px !important;
+}
+.box-links {
   display: flex;
   gap: 4rem;
 }
-.links{
-  font-family: 'Inter', sans-serif;
+.links {
+  font-family: "Inter", sans-serif;
   display: flex;
   align-items: center;
   gap: 4rem;
 }
-.link-menu{
+.link-menu {
   position: relative;
 }
-a{
+a {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
   text-decoration: none;
-  color: #FFF;
+  color: #fff;
   font-size: 1rem;
   cursor: pointer;
-  
 }
 
 @media only screen and (max-width: 800px) {
-
-  .links{
-
+  .links {
     gap: 2.5rem;
-
   }
 }
 @media only screen and (max-width: 700px) {
-
-  .links{
-
+  .links {
     display: none;
-
   }
-  .menu-icon{
+  .menu-icon {
     display: inline;
   }
-  button{
+  button {
     width: 100px;
-
-
   }
-  .logo{
-
-    gap: .6rem;
+  .logo {
+    gap: 0.6rem;
   }
 }
 
 @media only screen and (max-width: 600px) {
-  header{
+  header {
     height: 4rem;
     padding: 0 1rem;
   }
-  .menu-icon{
+  .menu-icon {
     margin-right: 0.2rem;
-
   }
 
-  .logo img{
-    width: 25px;
+  .logo img {
+    width: 25px !important;
     height: 25px !important;
   }
-  span{
+  span {
     font-size: 25px;
+    margin-top: 6px;
   }
-  .links{
-
+  .links {
     gap: 1rem;
-
   }
-  a{
+  a {
     display: none;
   }
 }

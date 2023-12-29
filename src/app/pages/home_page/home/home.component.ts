@@ -1,5 +1,4 @@
 import { Component, HostListener } from '@angular/core';
-import { bindCallback } from 'rxjs';
 import { Animal } from 'src/app/models/animal';
 import { UtilService } from 'src/app/service/util.service';
 import { __await } from 'tslib';
@@ -71,8 +70,6 @@ export class HomeComponent {
       = this.openModalSuccessfulAdoption
       = this.openMenuMeusPets
       = false;
-
-
   }
 
 }
