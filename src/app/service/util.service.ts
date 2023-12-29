@@ -18,16 +18,16 @@ export class UtilService {
       caracteristica: 'Orelhas pontudas',
       descricao: 'Um buldogue brincalhão.'
     },
-    {
-      imgPath: 'https://www.portaldodog.com.br/cachorros/wp-content/uploads/2020/03/dachshund-de-cachorro-na-grama_78621-2721.jpg',
-      nome: 'Luna',
-      sexo: 'Feminino',
-      idade: 1,
-      castrado: false,
-      cuidadosEspeciais: true,
-      caracteristica: 'Pelagem longa',
-      descricao: 'Uma husky siberiana com olhos azuis deslumbrantes.'
-    },
+    // {
+    //   imgPath: 'https://www.portaldodog.com.br/cachorros/wp-content/uploads/2020/03/dachshund-de-cachorro-na-grama_78621-2721.jpg',
+    //   nome: 'Luna',
+    //   sexo: 'Feminino',
+    //   idade: 1,
+    //   castrado: false,
+    //   cuidadosEspeciais: true,
+    //   caracteristica: 'Pelagem longa',
+    //   descricao: 'Uma husky siberiana com olhos azuis deslumbrantes.'
+    // },
     {
       imgPath: 'https://www.tendaatacado.com.br/dicas/wp-content/uploads/2023/04/topo-como-tirar-pelo-de-gato-do-sofa.jpg',
       nome: 'Charlie',
@@ -87,17 +87,17 @@ export class UtilService {
       cuidadosEspeciais: false,
       caracteristica: 'Pêlo macio',
       descricao: 'Uma shih tzu alegre.'
-    },
-    {
-      imgPath: 'https://blog.casadoprodutor.com.br/wp-content/uploads/2017/11/coelho-1024x856.jpg',
-      nome: 'Tucker',
-      sexo: 'Masculino',
-      idade: 3,
-      castrado: false,
-      cuidadosEspeciais: true,
-      caracteristica: 'Rabo enrolado',
-      descricao: 'Um poodle muito inteligente.'
     }
+    // {
+    //   imgPath: 'https://blog.casadoprodutor.com.br/wp-content/uploads/2017/11/coelho-1024x856.jpg',
+    //   nome: 'Tucker',
+    //   sexo: 'Masculino',
+    //   idade: 3,
+    //   castrado: false,
+    //   cuidadosEspeciais: true,
+    //   caracteristica: 'Rabo enrolado',
+    //   descricao: 'Um poodle muito inteligente.'
+    // }
   ]
 
   constructor() { }
