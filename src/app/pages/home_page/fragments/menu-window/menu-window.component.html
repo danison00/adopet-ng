@@ -1,4 +1,4 @@
-<div [ngClass]="{ hidden: !open }" class="box">
+<div [ngClass]="{ hidden: !openMenu }" class="box">
   <div class="content">
     <a>Doar Pet</a>
     <div class="link-menu-meus-pets-window">
@@ -7,8 +7,8 @@
       /></a>
       <div *ngIf="openBox" class="box-menu-meus-pets-window">
         <div class="content-box">
-          <a >Interesses em adotar</a>
-          <a [routerLink]="['/home/meus-pets/para-adocao']">Para Adoção</a>
+          <a>Interesses em adotar</a>
+          <a (click)="clickCloseMenuAndRouting('/home/meus-pets/para-adocao')">Para Adoção</a>
         </div>
       </div>
     </div>

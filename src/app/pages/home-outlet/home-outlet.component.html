@@ -1,1 +1,10 @@
-<router-outlet></router-outlet>
+<app-header
+  [btnLogout]="true"
+  [openMenuMeusPets]="openMenuMeusPets"
+  (openMenuMeuspetsEvent)="openMenuMeusPets = true"
+  (closeMenuMeuspetsEvent)="openMenuMeusPets = false"
+  (eventClickOpenWindowMenu)="openWindowMenu? clickOpenWindowMenu(false): clickOpenWindowMenu(true)"
+/>
+<app-menu-window [openMenu]="openWindowMenu" (clickEventCloseWindowMenu)="openWindowMenu=false"></app-menu-window>
+<app-touch-invisible [open]="openWindowMenu" (eventClick)="openWindowMenu = false"/>
+<router-outlet/>

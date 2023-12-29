@@ -15,7 +15,7 @@ export class HomeComponent {
   openModalPetDetails = false;
   openModalSuccessfulAdoption = false;
   openMenuMeusPets = false;
-  openWindowMenu = false;
+
   pets!: Animal[];
 
   pet: Animal = {
@@ -38,37 +38,14 @@ export class HomeComponent {
     this.openModalPetDetails = true;
   }
 
-  async onArrowClick() {
-    await this.scrollTop();
-    this.setBoxSearchVisible();
-  }
-
-  @HostListener('window:scroll', ['$event'])
-  private onScroll(event: Event): void {
-    const componentTop = document.getElementById('header');
-    if (componentTop) {
-      if (componentTop.getBoundingClientRect().top < 0){
-
-        this.boxSearchVisible = this.openWindowMenu = false;
-      }
-
-    }
-  }
   getPositionScroll(): any {
     return document.getElementById('header')?.getBoundingClientRect().top;
   }
-
-
-  setBoxSearchVisible() {
-
-    this.boxSearchVisible = !this.boxSearchVisible;
-
-  }
+ 
   async delay() {
     return new Promise((resolve) => setTimeout(resolve, 100));
-
   }
-
+  
   async scrollTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     while (true) {
@@ -77,25 +54,25 @@ export class HomeComponent {
     }
   }
 
+  async onLupaClick() {
+    await this.scrollTop();
+    this.boxSearchVisible = !this.boxSearchVisible;
+  }
+
   clickInterestIntPet() {
     this.openModalPetDetails = false;
     this.openModalSuccessfulAdoption = true;
   }
   async closeAll() {
-    
+
     this.boxSearchVisible
       = this.openModalPetDetails
       = this.openModalPetDetails
       = this.openModalSuccessfulAdoption
       = this.openMenuMeusPets
-      = this.openWindowMenu
       = false;
 
-    
-  }
-  async clickOpenWindowMenu(open: boolean){
-    await this.closeAll();
-    this.openWindowMenu = open;
+
   }
 
 }

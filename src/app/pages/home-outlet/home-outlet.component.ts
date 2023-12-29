@@ -7,4 +7,18 @@ import { Component } from '@angular/core';
 })
 export class HomeOutletComponent {
 
+  openMenuMeusPets = false;
+  openWindowMenu = false;
+  touchInvisible = true;
+
+  clickOpenWindowMenu(open: boolean) {
+    this.openWindowMenu = open;
+  }
+  closeAll() {
+    this.openMenuMeusPets =
+      this.openWindowMenu =
+      this.touchInvisible = false;
+  }
+
+  
 }

@@ -1,5 +1,6 @@
 import { LocationStrategy } from '@angular/common';
 import { Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu-meus-pets',
@@ -12,4 +13,10 @@ export class MenuHeaderComponent {
 
   @Input() openMenu = false;
 
+  constructor(private router: Router){}
+
+  closeMenuAndRouter(router: String){
+    this.router.navigate([router]);
+    this.eventCloseMenu.emit();
+  }
 }

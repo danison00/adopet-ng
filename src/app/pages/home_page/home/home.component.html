@@ -1,11 +1,3 @@
-<app-header
-  [btnLogout]="true"
-  [openMenuMeusPets]="openMenuMeusPets"
-  (openMenuMeuspetsEvent)="openMenuMeusPets = true"
-  (closeMenuMeuspetsEvent)="openMenuMeusPets = false"
-  (eventClickOpenWindowMenu)="openWindowMenu? clickOpenWindowMenu(false): clickOpenWindowMenu(true)"
-/>
-
 <app-modal-blank
   [open]="openModalPetDetails"
   (eventCloseModal)="openModalPetDetails = false"
@@ -27,36 +19,23 @@
   />
 </app-modal-blank>
 
-<div
-  (click)="closeAll()"
-  *ngIf="boxSearchVisible || openMenuMeusPets || openWindowMenu"
-  class="touch"
-></div>
+<app-touch-invisible
+  [open]="boxSearchVisible"
+  (eventClick)="boxSearchVisible = false"
+></app-touch-invisible>
+
 <main>
-  <app-menu-window [open]="openWindowMenu"></app-menu-window>
   <div class="box-search" [ngClass]="{ 'show-left': boxSearchVisible }">
-    <div (click)="onArrowClick()" *ngIf="boxSearchVisible" id="closeBtn">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        height="24"
-        viewBox="0 -960 960 960"
-        width="24"
-        fill="#474747"
-      >
-        <path
-          d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
-        />
-      </svg>
-    </div>
-    <div class="form-fixed">
-      <app-box-search (closeEvent)="onArrowClick()"></app-box-search>
-    </div>
+    <app-box-search
+      (closeEvent)="onLupaClick()"
+      [open]="boxSearchVisible"
+    ></app-box-search>
   </div>
   <div
     class="box-animals"
     [ngClass]="{
       blur:
-        boxSearchVisible || openModalPetDetails || openModalSuccessfulAdoption || openWindowMenu
+        boxSearchVisible || openModalPetDetails || openModalSuccessfulAdoption
     }"
   >
     <div class="cards-box">
@@ -72,7 +51,7 @@
     </div>
   </div>
   <div *ngIf="!openModalPetDetails" class="arrow">
-    <app-arrow-close (eventClick)="onArrowClick()" />
+    <app-lupa-btn (eventClick)="onLupaClick()" />
   </div>
 </main>
 <router-outlet></router-outlet>

@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { UtilService } from 'src/app/service/util.service';
 
 @Component({
   selector: 'app-header',
@@ -17,6 +18,7 @@ export class HeaderComponent {
 
 
 
+
   constructor(private router: Router) { }
   onClickLogin() {
     this.router.navigate(["/login"]);
@@ -25,6 +27,7 @@ export class HeaderComponent {
     this.router.navigate(["/login"]);
   }
   clickOpenMenuMeusPets() {
+    
     this.openMenuMeusPets = !this.openMenuMeusPets;
     this.openMenuMeuspetsEvent.emit();
 
@@ -32,7 +35,18 @@ export class HeaderComponent {
   clickCloseMenuMeusPets(){
     this.closeMenuMeuspetsEvent.emit();
   }
-  clickOpenMenu(){
+  clickOpenWindowMenu(){
     this.eventClickOpenWindowMenu.emit();
+  }
+  @HostListener('window:scroll', ['$event'])
+  private onScroll(event: Event): void {
+    const componentTop = document.getElementById('header');
+    if (componentTop) {
+      if (componentTop.getBoundingClientRect().top < 0){
+
+        this.openMenuMeusPets = this.openMenuMeusPets = false;
+      }
+
+    }
   }
 }

@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './pages/home_page/home/home.component';
 import { BoxSearchComponent } from './pages/home_page/fragments/box-search/box-search.component';
 import { CardPerfilAnimalComponent } from './pages/home_page/fragments/card-perfil-animal/card-perfil-animal.component';
-import { ArrowCloseComponent } from './components/arrow-close/arrow-close.component';
+import { ArrowCloseComponent } from './components/lupa-btn/lupa-btn.component';
 import { BtnControlComponent } from './pages/home_page/fragments/btn-control/btn-control.component';
 import { ModalBlankComponent } from './components/modal-blank/modal-blank.component';
 import { PetDetailsModalComponent } from './pages/home_page/fragments/content-modal-pet-details/pet-details-modal.component';
@@ -22,6 +22,7 @@ import { MenuHeaderComponent } from './components/header/fragments/menu-meus-pet
 import { MenuWindowComponent } from './pages/home_page/fragments/menu-window/menu-window.component';
 import { MyPetsToAdoptionPageComponent } from './pages/my-pets-to-adoption-page/my-pets-to-adoption-page.component';
 import { HomeOutletComponent } from './pages/home-outlet/home-outlet.component';
+import { TouchInvisibleComponent } from './components/touch-invisible/touch-invisible.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { HomeOutletComponent } from './pages/home-outlet/home-outlet.component';
     MenuWindowComponent,
     MyPetsToAdoptionPageComponent,
     HomeOutletComponent,
+    TouchInvisibleComponent,
     
   ],
   imports: [

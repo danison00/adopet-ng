@@ -1,6 +1,10 @@
-<div class="box">
+<div *ngIf="open" class="box">
+  <div (click)="onCloseClick()">
+   <img src="/assets/icons/x-close.svg" alt="" srcset="">
+  </div>
+
   <div>
-    <span>Pesquisar</span> 
+    <span>Pesquisar</span>
   </div>
   <app-input type="checkbox" labelSelect="Animal" [options]="animals" />
   <app-input
@@ -19,5 +23,4 @@
   </div>
 
   <app-button [type]="'terciary'" text="Procurar" [width100]="true" />
- 
 </div>

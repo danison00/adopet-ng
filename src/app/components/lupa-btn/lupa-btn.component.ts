@@ -1,9 +1,9 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-arrow-close',
-  templateUrl: './arrow-close.component.html',
-  styleUrls: ['./arrow-close.component.scss']
+  selector: 'app-lupa-btn',
+  templateUrl: './lupa-btn.component.html',
+  styleUrls: ['./lupa-btn.component.scss']
 })
 export class ArrowCloseComponent {
 
