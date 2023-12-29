@@ -20,9 +20,6 @@ main {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   place-items: center;
 }
-.card {
-  width: 300px;
-}
 .control {
   height: 60px;
   width: 100%;
@@ -48,24 +45,9 @@ main {
   .cards-box {
     grid-template-columns: repeat(3, 1fr);
   }
-  .card {
-    width: 300px;
-  }
+
 }
 
-@media only screen and (max-width: 1300px) {
-  .card {
-    width: 250px;
-  }
-}
-@media only screen and (max-width: 1200px) {
-  .cards-box {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .card {
-    width: 310px;
-  }
-}
 @media only screen and (max-width: 1000px) {
   .box-animals {
     flex: none;
@@ -87,37 +69,18 @@ main {
   .cards-box {
     grid-template-columns: repeat(3, 1fr);
   }
-  .card {
-    width: 250px;
-  }
+
 }
-@media only screen and (max-width: 900px) {
-  .cards-box {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .card {
-    width: 350px;
-  }
-}
+
 @media only screen and (max-width: 800px) {
   .cards-box {
     grid-template-columns: repeat(2, 1fr);
   }
-  .card {
-    width: 300px;
-  }
 }
-@media only screen and (max-width: 700px) {
-  .card {
-    width: 260px;
-  }
-}
+
 @media only screen and (max-width: 600px) {
   .cards-box {
     grid-template-columns: repeat(1, 1fr);
-  }
-  .card {
-    width: 98%;
   }
 }
 
