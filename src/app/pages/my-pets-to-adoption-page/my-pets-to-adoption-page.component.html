@@ -1,0 +1,23 @@
+<app-modal-blank
+  [open]="openModalPetDetails"
+  (eventCloseModal)="openModalPetDetails = false"
+>
+  <app-pet-details-modal
+    [pet]="pet"
+    (eventClose)="openModalPetDetails = false"
+    [showBtn]=false
+  />
+</app-modal-blank>
+
+<div class="cards-box">
+  <div class="card" *ngFor="let pet of pets">
+    <app-card-perfil-animal [animal]="pet" [hoverScale]="false" [cursorPointer]="false" >
+    <div class="box-btn">
+        <app-button type="ligth-blue" [width100]=true text="Visualizar" (clickEvent)="viewPetDetails(pet)"></app-button>
+        <app-button type="ligth-orange" [width100]=true text="Editar"></app-button>
+        <app-button type="ligth-red" [width100]=true text="Excluir"></app-button>
+
+    </div>
+    </app-card-perfil-animal>
+  </div>
+</div>
