@@ -20,10 +20,10 @@ import { ContentModalSuccessfulAdoptionComponent } from './pages/home_page/fragm
 import { ContentModalSuccessfullAdopteComponent } from './pages/home_page/fragments/content-modal-successfull-adoption/content-modal-successfull-adoption.component';
 import { MenuHeaderComponent } from './components/header/fragments/menu-meus-pets/menu-meus-pets.component';
 import { MenuWindowComponent } from './pages/home_page/fragments/menu-window/menu-window.component';
-import { MyPetsToAdoptionPageComponent } from './pages/my-pets-to-adoption-page/my-pets-to-adoption-page.component';
+import { MyPetsToDonatePageComponent } from './pages/my-pets-to-donate-page/my-pets-to-donate-page.component';
 import { HomeOutletComponent } from './pages/home-outlet/home-outlet.component';
 import { TouchInvisibleComponent } from './components/touch-invisible/touch-invisible.component';
-import { ModalDeleteConfirmComponent } from './pages/my-pets-to-adoption-page/fragments/modal-delete-confirm/modal-delete-confirm.component';
+import { ModalDeleteConfirmComponent } from './pages/my-pets-to-donate-page/fragments/modal-delete-confirm/modal-delete-confirm.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +44,7 @@ import { ModalDeleteConfirmComponent } from './pages/my-pets-to-adoption-page/fr
     ContentModalSuccessfullAdopteComponent,
     MenuHeaderComponent,
     MenuWindowComponent,
-    MyPetsToAdoptionPageComponent,
+    MyPetsToDonatePageComponent,
     HomeOutletComponent,
     TouchInvisibleComponent,
     ModalDeleteConfirmComponent,
