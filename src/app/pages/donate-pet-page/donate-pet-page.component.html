@@ -1,0 +1,67 @@
+<div class="box-form">
+  <form>
+    <div class="row box-img-input">
+      <div>
+        <label for="imagem" class="input-img">
+          <img src="/assets/icons/download-icon.svg" alt="" srcset="" />
+          <span>Foto do pet</span>
+        </label>
+        <input
+          class="img"
+          type="file"
+          id="imagem"
+          name="imagem"
+          accept="image/*"
+        />
+      </div>
+      <div class="boxin">
+        <app-input
+          type="select"
+          labelSelect="Espécie"
+          [options]="petsMaisComuns"
+        ></app-input>
+        <app-input placeholder="Nome"></app-input>
+        <div class="row">
+          <div class="w50">
+            <app-input placeholder="Idade" type="number" />
+          </div>
+          <div class="w50">
+            <app-input
+              type="select"
+              labelSelect="Sexo"
+              [options]="['Macho', 'Fêmea']"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="column w50">
+            <app-input placeholder="Cidade"></app-input>
+          </div>
+          <div class="column w50">
+            <app-input placeholder="Estado"></app-input>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="">
+      <textarea
+        placeholder="Características do pet..."
+        name=""
+        id=""
+        cols="60"
+        rows="5"
+      ></textarea>
+    </div>
+    <div class="row j-sb">
+      <app-input type="checkbox" labelCheckBox="É castrado" />
+      <app-input
+        type="checkbox"
+        labelCheckBox="Precisa de cuidados especiais"
+      />
+    </div>
+    <div class="box-btn">
+      <app-button text="Enviar" (clickEvent)="onEnviar()"></app-button>
+    </div>
+  </form>
+</div>
