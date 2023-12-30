@@ -1,0 +1,19 @@
+.content{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    padding: 0.5rem;
+}
+span{
+    font-family: 'Lilita One', sans-serif;
+    color: var(--cor-primaria);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.box-btn{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}

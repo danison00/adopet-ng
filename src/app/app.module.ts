@@ -23,6 +23,7 @@ import { MenuWindowComponent } from './pages/home_page/fragments/menu-window/men
 import { MyPetsToAdoptionPageComponent } from './pages/my-pets-to-adoption-page/my-pets-to-adoption-page.component';
 import { HomeOutletComponent } from './pages/home-outlet/home-outlet.component';
 import { TouchInvisibleComponent } from './components/touch-invisible/touch-invisible.component';
+import { ModalDeleteConfirmComponent } from './pages/my-pets-to-adoption-page/fragments/modal-delete-confirm/modal-delete-confirm.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { TouchInvisibleComponent } from './components/touch-invisible/touch-invi
     MyPetsToAdoptionPageComponent,
     HomeOutletComponent,
     TouchInvisibleComponent,
+    ModalDeleteConfirmComponent,
     
   ],
   imports: [
