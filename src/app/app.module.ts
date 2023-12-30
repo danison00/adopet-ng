@@ -24,6 +24,7 @@ import { MyPetsToDonatePageComponent } from './pages/my-pets-to-donate-page/my-p
 import { HomeOutletComponent } from './pages/home-outlet/home-outlet.component';
 import { TouchInvisibleComponent } from './components/touch-invisible/touch-invisible.component';
 import { ModalDeleteConfirmComponent } from './pages/my-pets-to-donate-page/fragments/modal-delete-confirm/modal-delete-confirm.component';
+import { DonatePetPageComponent } from './pages/donate-pet-page/donate-pet-page.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { ModalDeleteConfirmComponent } from './pages/my-pets-to-donate-page/frag
     HomeOutletComponent,
     TouchInvisibleComponent,
     ModalDeleteConfirmComponent,
+    DonatePetPageComponent,
     
   ],
   imports: [
