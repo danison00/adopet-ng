@@ -37,6 +37,11 @@ button {
     background-color: #ffe3b3;
     color: #ff9a22;
   }
+  &[type='gray']{
+    background-color: #F4F4F4;
+    color: #808A96;
+    border: 1px solid #848c961c;
+  }
 
   &[bg="dark-blue"] {
     background-color: #566495;
