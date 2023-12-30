@@ -2,7 +2,7 @@
   font-family: "Lilita One", sans-serif;
 }
 main {
-  height: auto;
+  height: 100%;
   width: 100%;
   display: flex;
 }
@@ -136,6 +136,7 @@ a{
     flex-direction: column;
   }
   main {
+    height: auto;
     justify-content: center;
     align-items: center;
   }
