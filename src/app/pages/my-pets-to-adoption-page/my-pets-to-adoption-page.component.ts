@@ -10,6 +10,7 @@ export class MyPetsToAdoptionPageComponent {
 
 
   openModalPetDetails = false;
+  modalDeleteConfirm = false;
   pet: Animal = {
 
     caracteristica: "",
@@ -79,11 +80,13 @@ export class MyPetsToAdoptionPageComponent {
     }
   ];
 
-  deletePet(id: number | undefined) {
-    for (let index = 0; index < this.pets.length; index++)
-      if (this.pets.at(index)?.id === id)
-        this.pets.splice(index, 1);
-
+  deletePet(pet: Animal) {
+    this.pet = pet;
+    this.modalDeleteConfirm = true;
+  }
+  confirmDelete(){
+    this.pets = this.pets.filter(pet => pet.id !== this.pet.id);
+    this.modalDeleteConfirm = false;
 
   }
 
