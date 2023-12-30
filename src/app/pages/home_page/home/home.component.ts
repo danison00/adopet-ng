@@ -11,7 +11,7 @@ import { __await } from 'tslib';
 export class HomeComponent {
 
   boxSearchVisible = false;
-  openModalPetDetails = false;
+  openModalPetDetails = true;
   openModalSuccessfulAdoption = false;
   openMenuMeusPets = false;
 
