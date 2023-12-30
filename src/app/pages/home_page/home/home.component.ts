@@ -11,21 +11,21 @@ import { __await } from 'tslib';
 export class HomeComponent {
 
   boxSearchVisible = false;
-  openModalPetDetails = true;
+  openModalPetDetails = false;
   openModalSuccessfulAdoption = false;
   openMenuMeusPets = false;
 
   pets!: Animal[];
 
   pet: Animal = {
-    caracteristica: "Agitado",
+    caracteristica: "",
     castrado: true,
     cuidadosEspeciais: false,
-    descricao: "Doguinho muito dócil mas muito agitado",
-    idade: 5,
-    imgPath: "/assets/img/dog-francisco.svg",
-    nome: "Francisco",
-    sexo: "macho"
+    descricao: "",
+    idade: 0,
+    imgPath: "",
+    nome: "",
+    sexo: ""
 
   }
   constructor(private util: UtilService) {
