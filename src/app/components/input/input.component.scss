@@ -18,11 +18,12 @@ input {
   }
 }
 input[type='number']{
-    padding: 10px 10px;
+    padding: 10px 21px;
 
 }
 label{
   cursor: pointer;
+  font-size: 14px;
 }
 select {
   font-family: "Inter", sans-serif;
@@ -36,11 +37,20 @@ select {
   cursor: pointer;
   color: #474747;
 }
-input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
+option{
+  color: #474747;
 
 }
+input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+}
+input[fullHeigth="true"] {
+ 
+  height: 100%;
+  width: 100%;
+}
+
 div {
   display: flex;
   align-items: center;

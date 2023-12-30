@@ -1,8 +1,8 @@
-<div *ngIf="!labelSelect">
+<div *ngIf="type !== 'select'">
     <input  [(ngModel)]="value" [checked]="value" [type]="type" [placeholder]="placeholder" />
-    <label *ngIf="labelCheckBox" (click)="setCheckBox()">{{labelCheckBox}}</label>
+    <label *ngIf="labelCheckBox" (click)="value = !value" [attr.fullHeigth]="fullHeigth">{{labelCheckBox}}</label>
 </div>
-<select *ngIf="labelSelect" id="" class="" name="">
+<select *ngIf="type === 'select'" id="" class="" name="">
     <option value="">{{labelSelect}}</option>
     <option value="" *ngFor = "let option of options" >{{option}}</option>
 </select>

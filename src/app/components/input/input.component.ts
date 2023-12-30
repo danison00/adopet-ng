@@ -13,6 +13,7 @@ export class InputComponent implements OnInit{
   @Input() options!: string[];
   @Input() labelSelect = "";
   @Input() labelCheckBox = "";
+  @Input() fullHeigth : 'false' | 'true' = 'false';
 
   constructor(){
   }
@@ -22,8 +23,5 @@ export class InputComponent implements OnInit{
       this.value = false;
     }
   }
-  
-  setCheckBox(){
-    this.value = !this.value;
-  }
+
 }
