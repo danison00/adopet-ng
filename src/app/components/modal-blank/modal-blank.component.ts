@@ -14,10 +14,9 @@ export class ModalBlankComponent {
     this.eventCloseModal.emit();
   }
   aa(event: MouseEvent) {
-    if (event.target === event.currentTarget) {
-      
+    if (event.target === event.currentTarget)
       this.eventCloseModal.emit();
-    }    
+
   }
 
 }
