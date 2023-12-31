@@ -1,6 +1,6 @@
 <div [ngClass]="{ hidden: !openMenu }" class="box">
   <div class="content">
-    <a>Doar Pet</a>
+    <a (click)="clickCloseMenuAndRouting('/home/doar-pet')">Doar Pet</a>
     <div class="link-menu-meus-pets-window">
       <a id="link-box" (click)="clickOpenBox()"
         >Meus pets <img src="assets/icons/arrow-rigth.svg" alt="" srcset=""
