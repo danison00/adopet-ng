@@ -1,12 +1,28 @@
+<modal-successful-register [open]="modalRegisterSuccess" [pet]="form.get('nome')?.value" (eventClose)="modalRegisterSuccess = false"/>
+
+
 <div class="box-form">
-  <form>
+  <form
+    [formGroup]="form"
+    enctype="multipart/form-data"
+    (ngSubmit)="onEnviar()"
+    #formDir="ngForm"
+  >
     <div class="row box-img-input">
       <div>
-        <label for="imagem" class="input-img">
+        <label
+          (click)="form.get('imagem')?.markAsTouched()"
+          [ngClass]="{
+            alert: form.get('imagem')?.invalid && formDir.submitted
+          }"
+          for="imagem"
+          class="input-img"
+        >
           <img src="/assets/icons/download-icon.svg" alt="" srcset="" />
           <span>Foto do pet</span>
         </label>
         <input
+          formControlName="imagem"
           class="img"
           type="file"
           id="imagem"
@@ -16,17 +32,39 @@
       </div>
       <div class="boxin">
         <app-input
+          formControlName="especie"
+          [isInvalid]="
+            form.get('especie')?.invalid && formDir.submitted ? true : false
+          "
           type="select"
           labelSelect="Espécie"
           [options]="petsMaisComuns"
-        ></app-input>
-        <app-input placeholder="Nome"></app-input>
+        />
+        <app-input
+          [isInvalid]="
+            form.get('nome')?.invalid && formDir.submitted ? true : false
+          "
+          placeholder="Nome"
+          formControlName="nome"
+        />
         <div class="row">
           <div class="w50">
-            <app-input placeholder="Idade" type="number" />
+            <app-input
+              [isInvalid]="
+                form.get('idade')?.invalid && formDir.submitted ? true : false
+              "
+              (input)="maskAge()"
+              formControlName="idade"
+              placeholder="Idade"
+              type="number"
+            />
           </div>
           <div class="w50">
             <app-input
+              [isInvalid]="
+                form.get('sexo')?.invalid && formDir.submitted ? true : false
+              "
+              formControlName="sexo"
               type="select"
               labelSelect="Sexo"
               [options]="['Macho', 'Fêmea']"
@@ -35,10 +73,22 @@
         </div>
         <div class="row">
           <div class="column w50">
-            <app-input placeholder="Cidade"></app-input>
+            <app-input
+              [isInvalid]="
+                form.get('cidade')?.invalid && formDir.submitted ? true : false
+              "
+              formControlName="cidade"
+              placeholder="Cidade"
+            />
           </div>
           <div class="column w50">
-            <app-input placeholder="Estado"></app-input>
+            <app-input
+              formControlName="estado"
+              [isInvalid]="
+                form.get('estado')?.invalid && formDir.submitted ? true : false
+              "
+              placeholder="Estado"
+            />
           </div>
         </div>
       </div>
@@ -46,6 +96,8 @@
 
     <div class="">
       <textarea
+        formControlName="caracteristicas"
+        [ngClass]="{'alert' : form.get('caracteristicas')?.invalid && formDir.submitted }"
         placeholder="Características do pet..."
         name=""
         id=""
@@ -54,8 +106,13 @@
       ></textarea>
     </div>
     <div class="row j-sb">
-      <app-input type="checkbox" labelCheckBox="É castrado" />
       <app-input
+        formControlName="castrado"
+        type="checkbox"
+        labelCheckBox="É castrado"
+      />
+      <app-input
+        formControlName="cuidadosEspeciais"
         type="checkbox"
         labelCheckBox="Precisa de cuidados especiais"
       />

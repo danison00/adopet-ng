@@ -17,6 +17,7 @@ form {
 input.img {
   display: none;
 }
+
 .input-img {
   background-color: #fbfbfb;
   width: 14.5rem;
@@ -53,13 +54,13 @@ div.descricao {
   flex-direction: column;
   gap: 1.5rem;
 }
-.w50{
+.w50 {
   width: 50%;
 }
-.w22{
+.w22 {
   width: 22%;
 }
-.j-sb{
+.j-sb {
   justify-content: space-around;
 }
 textarea {
@@ -73,31 +74,31 @@ textarea {
   border: none;
   background-color: #f7f7f7;
 }
-.box-btn{
+.box-btn {
   margin-top: 2rem;
 }
 
-@media only screen and (max-width:600px){
-  .box-img-input{
+@media only screen and (max-width: 600px) {
+  .box-img-input {
     flex-direction: column;
   }
   .input-img {
     width: 12rem;
     height: 12rem;
-    margin-bottom: .5rem;
-    
+    margin-bottom: 0.5rem;
   }
   form {
     margin-top: 0rem;
     padding: 0;
     height: auto;
-
-    
   }
   .box-form {
     padding: 1rem 2rem 1rem 2rem;
     height: auto;
     margin-bottom: 2rem;
-
+  }
+  .j-sb {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
