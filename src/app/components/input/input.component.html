@@ -1,8 +1,37 @@
-<div *ngIf="type !== 'select'">
-    <input  [(ngModel)]="value" [checked]="value" [type]="type" [placeholder]="placeholder" />
-    <label *ngIf="labelCheckBox" (click)="value = !value" [attr.fullHeigth]="fullHeigth">{{labelCheckBox}}</label>
+<input
+  *ngIf="type === 'text' || type === 'number'"
+  (click)="markAsTouched()"
+  [(ngModel)]="value"
+  [ngClass]="{ alert: isInvalid }"
+  (ngModelChange)="change()"
+  [type]="type"
+  [placeholder]="placeholder"
+/>
+<div>
+  <input
+    *ngIf="type === 'checkbox'"
+    type="checkbox"
+    [(ngModel)]="value"
+    [id]="labelCheckBox"
+    (ngModelChange)="change()"
+  />
+  <label
+    *ngIf="labelCheckBox"
+    [for]="labelCheckBox"
+    [attr.fullHeigth]="fullHeigth"
+    >{{ labelCheckBox }}</label
+  >
 </div>
-<select *ngIf="type === 'select'" id="" class="" name="">
-    <option value="">{{labelSelect}}</option>
-    <option value="" *ngFor = "let option of options" >{{option}}</option>
+<select
+  *ngIf="type === 'select'"
+  [ngClass]="{ alert: isInvalid }"
+  [(ngModel)]="value"
+  (change)="change()"
+>
+  <option value="">{{ labelSelect }}</option>
+  <option *ngFor="let option of options" [value]="option">
+    {{ option }}
+  </option>
 </select>
+
+

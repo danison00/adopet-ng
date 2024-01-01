@@ -39,11 +39,15 @@ select {
 }
 option{
   color: #474747;
-
+  font-size: 1rem;
+}
+input.alert, select.alert{
+  border: 1px solid rgba(255, 0, 0, 0.479);
 }
 input[type="checkbox"] {
   width: 17px;
   height: 17px;
+  cursor: pointer;
 }
 input[fullHeigth="true"] {
  
@@ -55,4 +59,10 @@ div {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+@media screen and (max-width: 600px){
+  option{
+    font-size: .7rem;
+  
+  }
 }
