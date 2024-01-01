@@ -1,4 +1,5 @@
 import { Component, Output, EventEmitter, HostListener, Input } from '@angular/core';
+import { UtilService } from 'src/app/service/util.service';
 
 @Component({
   selector: 'app-box-search',
@@ -7,11 +8,13 @@ import { Component, Output, EventEmitter, HostListener, Input } from '@angular/c
 })
 export class BoxSearchComponent {
 
-  animals = ['Cachorro', 'Gato', 'Cobra'];
-
   @Output() closeEvent = new EventEmitter<void>();
-
   @Input() open = false;
+
+  petsMaisComuns: string[] = [];
+  constructor(util: UtilService){
+    this.petsMaisComuns = util.petsMaisComuns;
+  }
 
   onCloseClick(){
     this.closeEvent.emit()
