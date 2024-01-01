@@ -1,17 +1,17 @@
 import { Component, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-content-modal-successful-register',
-  templateUrl: './content-modal-successful-register.component.html',
-  styleUrls: ['./content-modal-successful-register.component.scss']
+  selector: 'modal-successful-register',
+  templateUrl: './modal-successful-register.component.html',
+  styleUrls: ['./modal-successful-register.component.scss']
 })
 export class ContentModalSuccessfulAdoptionComponent {
 
 
   @Output() eventClose = new EventEmitter<void>();
   @Input() pet!: string;
-
-  clickCloseEvent(){
+  @Input() open = false;
+  clickCloseEvent() {
     this.eventClose.emit();
   }
 }
