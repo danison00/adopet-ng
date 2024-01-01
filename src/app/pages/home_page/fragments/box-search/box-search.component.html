@@ -6,31 +6,29 @@
   <div>
     <span>Pesquisar</span>
   </div>
-  <form>
-
-    <select>
+  <form [formGroup]="formSearch" #formDir="ngForm">
+    <select formControlName="especie">
       <option value="">Espécie</option>
       <option [value]="option" *ngFor="let option of petsMaisComuns">
         {{ option }}
       </option>
     </select>
-    <select>
+    <select formControlName="sexo">
       <option value="">Sexo</option>
       <option [value]="option" *ngFor="let option of ['Macho', 'Fêmea']">
         {{ option }}
       </option>
     </select>
 
-
     <div class="row">
-      <app-input placeholder="0 anos" type="number"></app-input>
-      <app-input placeholder="20 anos" type="number"></app-input>
+      <app-input formControlName="idadeInicial" placeholder="0 anos" type="number"></app-input>
+      <app-input formControlName="idadeFinal" placeholder="20 anos" type="number"></app-input>
     </div>
     <div class="group-checkBox">
-      <app-input type="checkbox" labelCheckBox="Castrado" />
-      <app-input type="checkbox" labelCheckBox="Cuidados especiais" />
+      <app-input formControlName="castrado" type="checkbox" labelCheckBox="Castrado" />
+      <app-input formControlName="cuidadosEspeciais" type="checkbox" labelCheckBox="Cuidados especiais" />
     </div>
 
-    <app-button [type]="'terciary'" text="Procurar" [width100]="true" />
+    <app-button [type]="'terciary'" text="Procurar" [width100]="true"  (clickEvent)="search()"/>
   </form>
 </div>

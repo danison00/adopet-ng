@@ -1,4 +1,5 @@
 import { Component, Output, EventEmitter, HostListener, Input } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { UtilService } from 'src/app/service/util.service';
 
 @Component({
@@ -10,9 +11,22 @@ export class BoxSearchComponent {
 
   @Output() closeEvent = new EventEmitter<void>();
   @Input() open = false;
+  formSearch!: FormGroup;
+
+
 
   petsMaisComuns: string[] = [];
-  constructor(util: UtilService){
+  constructor(util: UtilService, fb: FormBuilder){
+
+    this.formSearch = fb.group({
+      especie: [''],
+      sexo: [''],
+      idadeInicial: [null],
+      idadeFinal: [null],
+      castrado: [false],
+      cuidadosEspeciais: [false]
+    });
+
     this.petsMaisComuns = util.petsMaisComuns;
   }
 
@@ -30,5 +44,8 @@ export class BoxSearchComponent {
       }
     }
   }
-  
+  search(){
+    console.log(this.formSearch.value);
+    
+  }
 }
