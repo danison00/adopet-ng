@@ -1,0 +1,53 @@
+<div class="box">
+  <div class="box-img">
+    <div class="box-text">
+      <div class="text">Bem-vindo ao adopet!</div>
+      <div class="text">Registre-se agora!</div>
+    </div>
+    <img src="/assets/img/dog3.png" alt="" />
+  </div>
+  <div class="box-form">
+    <div class="content">
+      <form action="">
+        <input type="radio" name="input" id="step-one" checked />
+        <input type="radio" name="input" id="step-two" />
+        <input type="radio" name="input" id="step-three" />
+        <div class="text-form">
+          <div class="text">Registre-se agora!</div>
+        </div>
+
+        <fieldset class="dados-pessoais">
+          <legend>Dados Pessoais</legend>
+          <app-input placeholder="Nome"></app-input>
+          <app-input placeholder="Idade" type="number"></app-input>
+          <app-input placeholder="Cpf"></app-input>
+          <app-input placeholder="Email"></app-input>
+          <app-input placeholder="Telefone"></app-input>
+        </fieldset>
+
+        <fieldset class="endereco">
+          <legend>Endereço</legend>
+          <app-input placeholder="Rua"></app-input>
+          <app-input placeholder="Bairro"></app-input>
+          <app-input placeholder="Número" type="number"></app-input>
+          <app-input placeholder="Cidade"></app-input>
+          <app-input placeholder="Estado"></app-input>
+        </fieldset>
+        <fieldset class="login">
+          <legend>Escolha seu login</legend>
+          <app-input placeholder="Usuário"></app-input>
+          <app-input placeholder="Senha" type="password"></app-input>
+          <app-input placeholder="Confirmar senha" type="password"></app-input>
+
+        </fieldset>
+        <div class="box-btn">
+          <app-button *ngIf="step!==0" (click)="back()" text="Voltar" type="ligth-orange" [width100]="true"></app-button>
+          <div class="next-btn" *ngIf="step!==2">
+            <app-button  (click)="next()" text="Avançar" [width100]="true"></app-button>
+          </div>
+          <app-button id="a" *ngIf="step===2" text="Finalizar" [width100]="true"></app-button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
