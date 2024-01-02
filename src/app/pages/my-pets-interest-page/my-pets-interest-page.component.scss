@@ -1,0 +1,57 @@
+.cards-box {
+    width: 100%;
+    height: auto;
+    padding: 2rem 5rem 5rem 5rem;
+    gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    place-items: center;
+  }
+  
+  .box-btn {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .no-pets-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100dvh);
+    align-items: center;
+    & img {
+      width: 120px;
+      height: auto;
+      filter: grayscale(70%) brightness(100%);
+      opacity: 0.9;
+  
+    }
+    & span {
+      font-family: "Lilita One", sans-serif;
+      font-size: 25px;
+      color: #7f8083;
+    }
+  }
+  
+  @media only screen and (max-width: 1200px) {
+    .cards-box {
+      grid-template-columns: repeat(3, 1fr);
+      padding: 2rem 3rem 3rem 3rem;
+    }
+  }
+  
+  @media only screen and (max-width: 800px) {
+    .cards-box {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .cards-box {
+      grid-template-columns: repeat(1, 1fr);
+      padding: 2rem 1.5rem 2rem 1.5rem;
+  
+    }
+  }
+  

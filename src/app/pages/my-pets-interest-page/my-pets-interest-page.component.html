@@ -1,0 +1,46 @@
+<app-modal-blank
+  [open]="openModalPetDetails"
+  (eventCloseModal)="openModalPetDetails = false"
+>
+  <app-pet-details-modal
+    [pet]="pet"
+    (eventClose)="openModalPetDetails = false"
+    [showBtn]="false"
+  />
+</app-modal-blank>
+
+<app-modal-delete-confirm
+text="Tem certeza que não está mais interessado?"
+  [open]="modalDeleteConfirm"
+  (eventClickClose)="modalDeleteConfirm = false"
+  (eventClickConfirm)="confirmDelete()"
+/>
+
+<div class="cards-box">
+  <div class="card" *ngFor="let pet of pets">
+    <app-card-perfil-animal
+      [animal]="pet"
+      [hoverScale]="false"
+      [cursorPointer]="false"
+    >
+      <div class="box-btn">
+        <app-button
+          type="ligth-blue"
+          [width100]="true"
+          text="Visualizar"
+          (clickEvent)="viewPetDetails(pet)"
+        ></app-button>
+        <app-button
+          type="ligth-red"
+          [width100]="true"
+          text="Não tenho interesse"
+          (clickEvent)="deletePet(pet)"
+        ></app-button>
+      </div>
+    </app-card-perfil-animal>
+  </div>
+</div>
+<div class="no-pets-box" *ngIf="pets.length === 0">
+  <img src="/assets/img/no-pets.png" />
+  <span>Ops! Não há pets aqui ;(</span>
+</div>
