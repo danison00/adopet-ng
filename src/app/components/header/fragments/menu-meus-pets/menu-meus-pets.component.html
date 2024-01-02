@@ -1,4 +1,4 @@
 <div *ngIf="openMenu" class="content">
-  <a class="link-menu-meus-pets"> Interesses em Adotar</a>
+  <a class="link-menu-meus-pets" (click)="closeMenuAndRouter('home/meus-pets/meu-interesse')"> Interesses em Adotar</a>
   <a class="link-menu-meus-pets" (click)="closeMenuAndRouter('home/meus-pets/para-adocao')">Para Doação</a>
 </div>
