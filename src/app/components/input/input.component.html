@@ -1,5 +1,5 @@
 <input
-  *ngIf="type === 'text' || type === 'number' || 'password'"
+  *ngIf="type === 'text' || type === 'number' || type === 'password'"
   (click)="markAsTouched()"
   [(ngModel)]="value"
   [ngClass]="{ alert: isInvalid }"
