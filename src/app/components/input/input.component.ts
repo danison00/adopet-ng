@@ -17,6 +17,7 @@ export class InputComponent implements ControlValueAccessor {
   @Input() placeholder = '';
   @Input() type = 'text';
   @Input() isInvalid: boolean = false;
+  @Input() myMask = '';
   value!: any;
 
   @Input() options!: string[];

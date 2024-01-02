@@ -27,6 +27,7 @@ import { ModalDeleteConfirmComponent } from './pages/my-pets-to-donate-page/frag
 import { DonatePetPageComponent } from './pages/donate-pet-page/donate-pet-page.component';
 import { UserRegisterPageComponent } from './pages/user-register-page/user-register-page.component';
 import { MaskAgePipe } from './shared/pipes/mask-age.pipe';
+import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -54,16 +55,17 @@ import { MaskAgePipe } from './shared/pipes/mask-age.pipe';
     DonatePetPageComponent,
     UserRegisterPageComponent,
     MaskAgePipe,
-    
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
-
+    ReactiveFormsModule,
+    NgxMaskDirective,
+    NgxMaskPipe
   ],
-  providers: [],
+  providers: [provideNgxMask()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

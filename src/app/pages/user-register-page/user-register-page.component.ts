@@ -17,11 +17,11 @@ export class UserRegisterPageComponent {
 
   constructor(fb: FormBuilder) {
     this.formDadosPessoais = fb.group({
-      nome: ['Danison', [Validators.required, Validators.minLength(5)]],
-      idade: [24, Validators.required],
-      cpf: ['02157378295', Validators.required],
-      email: ['Dan@email', [Validators.required, Validators.email]],
-      telefone: ['984733208', Validators.required]
+      nome: ['', [Validators.required, Validators.minLength(5)]],
+      idade: [, Validators.required],
+      cpf: ['', [Validators.required, Validators.minLength(11)]],
+      email: ['', [Validators.required, Validators.email]],
+      telefone: ['', [Validators.required, Validators.minLength(11)]]
     });
     this.formEndereco = fb.group({
       rua: ['', Validators.required],
@@ -31,9 +31,9 @@ export class UserRegisterPageComponent {
       estado: ['', Validators.required],
     });
     this.formLogin = fb.group({
-      usuario: ['', Validators.required],
-      senha: ['', Validators.required],
-      confirmarSenha: ['', Validators.required]
+      usuario: ['', [Validators.required, Validators.minLength(5)]],
+      senha: ['', [Validators.required, Validators.minLength(5)]],
+      confirmarSenha: ['', [Validators.required, Validators.minLength(5)]]
     });
     this.forms = [this.formDadosPessoais, this.formEndereco, this.formLogin];
   }

@@ -38,6 +38,7 @@
                 ? true
                 : false
             "
+            myMask="000"
             placeholder="Idade"
             type="number"
           />
@@ -48,6 +49,7 @@
                 ? true
                 : false
             "
+            myMask="000.000.000-00"
             placeholder="Cpf"
           />
           <app-input
@@ -66,11 +68,12 @@
                 ? true
                 : false
             "
+            myMask="(00) 00000-0000"
             placeholder="Telefone"
           />
         </fieldset>
         <div class="box-btn" *ngIf="step === 0">
-          <div class="next-btn" >
+          <div class="next-btn">
             <app-button (click)="next()" text="Avançar" [width100]="true" />
           </div>
         </div>
@@ -101,8 +104,9 @@
                 ? true
                 : false
             "
+            myMask="AAAAAA"
             placeholder="Número"
-            type="number"
+            type="text"
           />
           <app-input
             formControlName="cidade"
