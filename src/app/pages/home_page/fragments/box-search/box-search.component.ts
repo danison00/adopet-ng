@@ -48,4 +48,24 @@ export class BoxSearchComponent {
     console.log(this.formSearch.value);
     
   }
+  maskAge(){
+
+    let idadeInicial = this.formSearch.get('idadeInicial')
+    let idadeFinal = this.formSearch.get('idadeFinal')
+
+    if (parseInt(idadeInicial?.value) < 0) {
+      idadeInicial?.setValue('0')
+    }
+    if (parseInt(idadeInicial?.value) > 20) {
+      idadeInicial?.setValue('20')
+    }
+
+    if (parseInt(idadeFinal?.value) < 0) {
+      idadeFinal?.setValue('0')
+    }
+    if (parseInt(idadeFinal?.value) > 20) {
+      idadeFinal?.setValue('20')
+    }
+  }
+ 
 }

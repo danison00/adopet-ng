@@ -25,6 +25,8 @@ import { HomeOutletComponent } from './pages/home-outlet/home-outlet.component';
 import { TouchInvisibleComponent } from './components/touch-invisible/touch-invisible.component';
 import { ModalDeleteConfirmComponent } from './pages/my-pets-to-donate-page/fragments/modal-delete-confirm/modal-delete-confirm.component';
 import { DonatePetPageComponent } from './pages/donate-pet-page/donate-pet-page.component';
+import { UserRegisterPageComponent } from './pages/user-register-page/user-register-page.component';
+import { MaskAgePipe } from './shared/pipes/mask-age.pipe';
 
 @NgModule({
   declarations: [
@@ -50,6 +52,8 @@ import { DonatePetPageComponent } from './pages/donate-pet-page/donate-pet-page.
     TouchInvisibleComponent,
     ModalDeleteConfirmComponent,
     DonatePetPageComponent,
+    UserRegisterPageComponent,
+    MaskAgePipe,
     
   ],
   imports: [

@@ -21,14 +21,37 @@
     </select>
 
     <div class="row">
-      <app-input formControlName="idadeInicial" placeholder="0 anos" type="number"></app-input>
-      <app-input formControlName="idadeFinal" placeholder="20 anos" type="number"></app-input>
+      <app-input
+        formControlName="idadeInicial"
+        placeholder="0 anos"
+        type="number"
+        (input) = "maskAge()"
+      ></app-input>
+      <app-input
+        formControlName="idadeFinal"
+        placeholder="20 anos"
+        type="number"
+        (input) = "maskAge()"
+      ></app-input>
     </div>
     <div class="group-checkBox">
-      <app-input formControlName="castrado" type="checkbox" labelCheckBox="Castrado" />
-      <app-input formControlName="cuidadosEspeciais" type="checkbox" labelCheckBox="Cuidados especiais" />
+      <app-input
+        formControlName="castrado"
+        type="checkbox"
+        labelCheckBox="Castrado"
+      />
+      <app-input
+        formControlName="cuidadosEspeciais"
+        type="checkbox"
+        labelCheckBox="Cuidados especiais"
+      />
     </div>
 
-    <app-button [type]="'terciary'" text="Procurar" [width100]="true"  (clickEvent)="search()"/>
+    <app-button
+      [type]="'terciary'"
+      text="Procurar"
+      [width100]="true"
+      (clickEvent)="search()"
+    />
   </form>
 </div>
