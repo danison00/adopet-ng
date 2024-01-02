@@ -8,44 +8,177 @@
   </div>
   <div class="box-form">
     <div class="content">
-      <form action="">
-        <input type="radio" name="input" id="step-one" checked />
-        <input type="radio" name="input" id="step-two" />
-        <input type="radio" name="input" id="step-three" />
-        <div class="text-form">
-          <div class="text">Registre-se agora!</div>
-        </div>
+      <div class="text-form">
+        <div class="text">Registre-se agora!</div>
+      </div>
 
-        <fieldset class="dados-pessoais">
+      <input type="radio" name="input" id="step-one" checked />
+      <input type="radio" name="input" id="step-two" />
+      <input type="radio" name="input" id="step-three" />
+      <form
+        [formGroup]="formDadosPessoais"
+        #form1="ngForm"
+        class="dados-pessoais"
+      >
+        <fieldset>
           <legend>Dados Pessoais</legend>
-          <app-input placeholder="Nome"></app-input>
-          <app-input placeholder="Idade" type="number"></app-input>
-          <app-input placeholder="Cpf"></app-input>
-          <app-input placeholder="Email"></app-input>
-          <app-input placeholder="Telefone"></app-input>
+          <app-input
+            [isInvalid]="
+              formDadosPessoais.get('nome')?.invalid && form1.submitted
+                ? true
+                : false
+            "
+            formControlName="nome"
+            placeholder="Nome"
+          />
+          <app-input
+            formControlName="idade"
+            [isInvalid]="
+              formDadosPessoais.get('idade')?.invalid && form1.submitted
+                ? true
+                : false
+            "
+            placeholder="Idade"
+            type="number"
+          />
+          <app-input
+            formControlName="cpf"
+            [isInvalid]="
+              formDadosPessoais.get('cpf')?.invalid && form1.submitted
+                ? true
+                : false
+            "
+            placeholder="Cpf"
+          />
+          <app-input
+            formControlName="email"
+            [isInvalid]="
+              formDadosPessoais.get('email')?.invalid && form1.submitted
+                ? true
+                : false
+            "
+            placeholder="Email"
+          />
+          <app-input
+            formControlName="telefone"
+            [isInvalid]="
+              formDadosPessoais.get('telefone')?.invalid && form1.submitted
+                ? true
+                : false
+            "
+            placeholder="Telefone"
+          />
         </fieldset>
-
-        <fieldset class="endereco">
-          <legend>Endereço</legend>
-          <app-input placeholder="Rua"></app-input>
-          <app-input placeholder="Bairro"></app-input>
-          <app-input placeholder="Número" type="number"></app-input>
-          <app-input placeholder="Cidade"></app-input>
-          <app-input placeholder="Estado"></app-input>
-        </fieldset>
-        <fieldset class="login">
-          <legend>Escolha seu login</legend>
-          <app-input placeholder="Usuário"></app-input>
-          <app-input placeholder="Senha" type="password"></app-input>
-          <app-input placeholder="Confirmar senha" type="password"></app-input>
-
-        </fieldset>
-        <div class="box-btn">
-          <app-button *ngIf="step!==0" (click)="back()" text="Voltar" type="ligth-orange" [width100]="true"></app-button>
-          <div class="next-btn" *ngIf="step!==2">
-            <app-button  (click)="next()" text="Avançar" [width100]="true"></app-button>
+        <div class="box-btn" *ngIf="step === 0">
+          <div class="next-btn" >
+            <app-button (click)="next()" text="Avançar" [width100]="true" />
           </div>
-          <app-button id="a" *ngIf="step===2" text="Finalizar" [width100]="true"></app-button>
+        </div>
+      </form>
+      <form [formGroup]="formEndereco" class="endereco" #form2="ngForm">
+        <fieldset>
+          <legend>Endereço</legend>
+          <app-input
+            formControlName="rua"
+            [isInvalid]="
+              formEndereco.get('rua')?.invalid && form2.submitted ? true : false
+            "
+            placeholder="Rua"
+          />
+          <app-input
+            formControlName="bairro"
+            [isInvalid]="
+              formEndereco.get('bairro')?.invalid && form2.submitted
+                ? true
+                : false
+            "
+            placeholder="Bairro"
+          ></app-input>
+          <app-input
+            formControlName="numero"
+            [isInvalid]="
+              formEndereco.get('numero')?.invalid && form2.submitted
+                ? true
+                : false
+            "
+            placeholder="Número"
+            type="number"
+          />
+          <app-input
+            formControlName="cidade"
+            [isInvalid]="
+              formEndereco.get('cidade')?.invalid && form2.submitted
+                ? true
+                : false
+            "
+            placeholder="Cidade"
+          />
+          <app-input
+            formControlName="estado"
+            [isInvalid]="
+              formEndereco.get('estado')?.invalid && form2.submitted
+                ? true
+                : false
+            "
+            placeholder="Estado"
+          />
+        </fieldset>
+        <div class="box-btn" *ngIf="step === 1">
+          <app-button
+            (click)="back()"
+            text="Voltar"
+            type="ligth-orange"
+            [width100]="true"
+          />
+          <div class="next-btn">
+            <app-button (click)="next()" text="Avançar" [width100]="true" />
+          </div>
+        </div>
+      </form>
+      <form [formGroup]="formLogin" class="login" #form3="ngForm">
+        <fieldset>
+          <legend>Escolha seu login</legend>
+          <app-input
+            formControlName="usuario"
+            [isInvalid]="
+              formLogin.get('usuario')?.invalid && form3.submitted
+                ? true
+                : false
+            "
+            placeholder="Usuário"
+          />
+          <app-input
+            formControlName="senha"
+            [isInvalid]="
+              formLogin.get('senha')?.invalid && form3.submitted ? true : false
+            "
+            placeholder="Senha"
+            type="password"
+          />
+          <app-input
+            formControlName="confirmarSenha"
+            [isInvalid]="
+              formLogin.get('confirmarSenha')?.invalid && form3.submitted
+                ? true
+                : false
+            "
+            placeholder="Confirmar senha"
+            type="password"
+          />
+        </fieldset>
+        <div class="box-btn" *ngIf="step === 2">
+          <app-button
+            (click)="back()"
+            text="Voltar"
+            type="ligth-orange"
+            [width100]="true"
+          />
+          <app-button
+            (click)="sendForm()"
+            id="a"
+            text="Finalizar"
+            [width100]="true"
+          />
         </div>
       </form>
     </div>
