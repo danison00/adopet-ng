@@ -8,6 +8,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class ModalDeleteConfirmComponent {
 
   @Input() open = true;
+  @Input() text = '';
   @Output() eventClickClose = new EventEmitter<void>()
   @Output() eventClickConfirm = new EventEmitter<void>()
 

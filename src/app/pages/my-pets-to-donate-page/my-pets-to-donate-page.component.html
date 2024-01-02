@@ -10,6 +10,7 @@
 </app-modal-blank>
 
 <app-modal-delete-confirm 
+text="Tem certeza que deseja remover este pet da adoção?"
 [open]="modalDeleteConfirm" 
 (eventClickClose)="modalDeleteConfirm = false"
 (eventClickConfirm)="confirmDelete()"/>
