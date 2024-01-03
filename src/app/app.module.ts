@@ -28,6 +28,7 @@ import { DonatePetPageComponent } from './pages/donate-pet-page/donate-pet-page.
 import { UserRegisterPageComponent } from './pages/user-register-page/user-register-page.component';
 import { MaskAgePipe } from './shared/pipes/mask-age.pipe';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
+import { MyPetsInterestPageComponent } from './pages/my-pets-interest-page/my-pets-interest-page.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
     DonatePetPageComponent,
     UserRegisterPageComponent,
     MaskAgePipe,
+    MyPetsInterestPageComponent,
 
   ],
   imports: [

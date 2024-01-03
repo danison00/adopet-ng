@@ -1,6 +1,6 @@
 <app-modal-blank (eventCloseModal)="eventClickClose.emit()" [open]="open">
   <div class="content">
-    <span>Tem certeza que deseja cancelar esta doação?</span>
+    <span>{{text}}</span>
     <div class="box-btn">
       <app-button (clickEvent)="eventClickClose.emit()"  type="gray" text="Cancelar"></app-button>
       <app-button (clickEvent)="eventClickConfirm.emit()" text="Confirmar"></app-button>

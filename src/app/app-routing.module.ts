@@ -7,7 +7,7 @@ import { MyPetsToDonatePageComponent } from './pages/my-pets-to-donate-page/my-p
 import { HomeOutletComponent } from './pages/home-outlet/home-outlet.component';
 import { DonatePetPageComponent } from './pages/donate-pet-page/donate-pet-page.component';
 import { UserRegisterPageComponent } from './pages/user-register-page/user-register-page.component';
-import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
+import { MyPetsInterestPageComponent } from './pages/my-pets-interest-page/my-pets-interest-page.component';
 
 const routes: Routes = [
   { path: "", component: AdopetComponent },
@@ -17,6 +17,7 @@ const routes: Routes = [
     path: "home", component: HomeOutletComponent, children: [
       { path: "", component: HomeComponent },
       { path: "meus-pets/para-adocao", component: MyPetsToDonatePageComponent },
+      { path: "meus-pets/meu-interesse", component: MyPetsInterestPageComponent },
       { path: "doar-pet", component: DonatePetPageComponent }
     ]
   },
