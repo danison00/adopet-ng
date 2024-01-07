@@ -1,5 +1,8 @@
-<modal-successful-register [open]="modalRegisterSuccess" [pet]="form.get('nome')?.value" (eventClose)="modalRegisterSuccess = false"/>
-
+<modal-successful-register
+  [open]="modalRegisterSuccess"
+  [pet]="form.get('nome')?.value"
+  (eventClose)="modalRegisterSuccess = false"
+/>
 
 <div class="box-form">
   <form
@@ -53,7 +56,7 @@
               [isInvalid]="
                 form.get('idade')?.invalid && formDir.submitted ? true : false
               "
-              (input)="maskAge()"
+              myMask="99"
               formControlName="idade"
               placeholder="Idade"
               type="number"

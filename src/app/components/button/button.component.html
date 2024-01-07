@@ -3,8 +3,12 @@
   (click)="emittClick()"
   [attr.type]="type"
   [attr.width100]="width100"
-  [attr.hoverScale] = "hoverScale"
+  [attr.hoverScale]="hoverScale"
   [attr.bg]="bg"
 >
-  {{ text }}
+  <loading-spinner *ngIf="spinner" color="ligth-orange" />
+  
+  <div *ngIf="!spinner">
+    {{ text }}
+  </div>
 </button>

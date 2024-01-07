@@ -1,4 +1,6 @@
-import { Component, HostListener } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
+import { PetService } from '../../../service/pet.service';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Animal } from 'src/app/models/animal';
 import { UtilService } from 'src/app/service/util.service';
 import { __await } from 'tslib';
@@ -8,13 +10,14 @@ import { __await } from 'tslib';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
 
   boxSearchVisible = false;
   openModalPetDetails = false;
   openModalSuccessfulAdoption = false;
   openMenuMeusPets = false;
 
+  pets$!: Subscription;
   pets!: Animal[];
 
   pet: Animal = {
@@ -28,8 +31,17 @@ export class HomeComponent {
     sexo: ""
 
   }
-  constructor(private util: UtilService) {
-    this.pets = util.dogs;
+  constructor(private util: UtilService, private getPetsService: PetService) {
+  }
+  ngOnInit(): void {
+
+    this.pets$ = this.getPetsService.getPets().subscribe(
+    {
+      next: (animal) => {
+        this.pets = animal;
+      }
+    }
+    );
   }
 
   onClickCard(pet: Animal) {
@@ -40,11 +52,11 @@ export class HomeComponent {
   getPositionScroll(): any {
     return document.getElementById('header')?.getBoundingClientRect().top;
   }
- 
+
   async delay() {
     return new Promise((resolve) => setTimeout(resolve, 100));
   }
-  
+
   async scrollTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     while (true) {

@@ -24,7 +24,8 @@
   (eventClick)="boxSearchVisible = false"
 ></app-touch-invisible>
 
-<main>
+<loading-page *ngIf="!pets"/>
+<main *ngIf="pets">
   <app-box-search
     (closeEvent)="boxSearchVisible = false"
     [open]="boxSearchVisible"

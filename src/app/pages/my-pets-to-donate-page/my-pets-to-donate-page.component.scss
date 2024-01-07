@@ -6,8 +6,9 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   place-items: center;
-}
+  transition: ease .3s;
 
+}
 .box-btn {
   margin-top: 0.5rem;
   display: flex;

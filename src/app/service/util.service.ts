@@ -21,9 +21,11 @@ export class UtilService {
 
   dogs: Animal[] = [
     {
-      imgPath: 'https://media.istockphoto.com/id/1482199015/pt/foto/happy-puppy-welsh-corgi-14-weeks-old-dog-winking-panting-and-sitting-isolated-on-white.jpg?s=612x612&w=0&k=20&c=XI-fFXTXEU4UbQtGwM_vWzBB4F17W4dlPtXL4wr2dmE=',
+      id: 1,
+      imgPath: '',
       nome: 'Max',
-      sexo: 'Masculino',
+      especie: "Cachorro",
+      sexo: 'Macho',
       idade: 2,
       castrado: true,
       cuidadosEspeciais: false,
@@ -41,6 +43,7 @@ export class UtilService {
     //   descricao: 'Uma husky siberiana com olhos azuis deslumbrantes.'
     // },
     {
+      id: 2,
       imgPath: 'https://www.tendaatacado.com.br/dicas/wp-content/uploads/2023/04/topo-como-tirar-pelo-de-gato-do-sofa.jpg',
       nome: 'Charlie',
       sexo: 'Masculino',
@@ -51,6 +54,7 @@ export class UtilService {
       descricao: 'Um dálmata amigável e energético.'
     },
     {
+      id: 3,
       imgPath: 'https://www.petsupport.com.br/wp-content/uploads/2021/09/necessidades-dos-gatos-1-1024x576.jpg',
       nome: 'Lucy',
       sexo: 'Feminino',

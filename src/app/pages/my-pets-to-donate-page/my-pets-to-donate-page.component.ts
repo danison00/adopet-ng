@@ -84,14 +84,17 @@ export class MyPetsToDonatePageComponent {
     this.pet = pet;
     this.modalDeleteConfirm = true;
   }
+
   confirmDelete(){
     this.pets = this.pets.filter(pet => pet.id !== this.pet.id);
     this.modalDeleteConfirm = false;
-
   }
 
   viewPetDetails(pet: Animal) {
     this.pet = pet;
     this.openModalPetDetails = true;
+  }
+  editPet(pet: Animal){
+
   }
 }

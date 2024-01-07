@@ -69,6 +69,7 @@ export class UserRegisterPageComponent {
     }
   }
   sendForm() {
+    
     if(this.formLogin.valid){
       console.log("enviando...");
       return;
