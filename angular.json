@@ -73,7 +73,9 @@
               "browserTarget": "adopet:build:production"
             },
             "development": {
-              "browserTarget": "adopet:build:development"
+              "browserTarget": "adopet:build:development",
+              "proxyConfig": "proxy.config.json"
+
             }
           },
           "defaultConfiguration": "development"
