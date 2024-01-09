@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Animal } from 'src/app/models/animal';
 import { PetService } from 'src/app/service/pet.service';
 
@@ -12,10 +12,12 @@ import { PetService } from 'src/app/service/pet.service';
 export class PetRegisterToDonatePage implements OnInit {
 
   form: FormGroup;
+  formData: FormData = new FormData();
   modalRegisterSuccess = false;
   @Input() pet!: Animal;
 
-  constructor(private fb: FormBuilder, private activatedRoute: ActivatedRoute, private petServ: PetService) {
+  constructor(private fb: FormBuilder, private activatedRoute: ActivatedRoute, private router: Router, private petServ: PetService) {
+
     this.form = fb.group({
       imagem: [null, Validators.required],
       especie: ['', Validators.required],
@@ -28,14 +30,14 @@ export class PetRegisterToDonatePage implements OnInit {
       castrado: [false, Validators.required],
       cuidadosEspeciais: [false, Validators.required],
     });
+
   }
   ngOnInit(): void {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
     if (id) {
       this.petServ.findById(parseInt(id)).subscribe({
         next: (pet) => {
-          console.log(pet);
-          
+
           if (pet) {
 
             this.form.setValue({
@@ -58,28 +60,33 @@ export class PetRegisterToDonatePage implements OnInit {
 
   }
 
-  petsMaisComuns = [
-    'Cachorro',
-    'Gato',
-    'Peixe',
-    'Pássaro',
-    'Coelho',
-    'Hamster',
-    'Tartaruga',
-    'Réptil',
-    'Furão'
-  ];
 
   onEnviar() {
-    console.log(this.pet);
 
-    if (this.form.invalid) {
-      return
-    }
-    this.modalRegisterSuccess = true;
-    console.log("enviando...");
-    console.log(this.form.value);
+    if (this.form.invalid || this.modalRegisterSuccess) return;
 
+
+    this.formData.append('especie', this.form.get('especie')?.value);
+    this.formData.append('nome', this.form.get('nome')?.value);
+    this.formData.append('castrado', this.form.get('castrado')?.value);
+    this.formData.append('cuidadosEspeciais', this.form.get('cuidadosEspeciais')?.value);
+    this.formData.append('idade', this.form.get('idade')?.value);
+    this.formData.append('sexo', this.form.get('sexo')?.value);
+    this.formData.append('caracteristicas', this.form.get('caracteristicas')?.value);
+
+    this.petServ.savePet(this.formData).subscribe({
+      next: (e) => {
+        this.modalRegisterSuccess = true;
+      }
+    });
+
+  }
+  changeInputImage(eve: any) {
+    this.formData.append('imagem', eve.target.files[0])
+  }
+  redirect() {
+    alert()
+    this.router.navigate(['home'])
   }
 
 }

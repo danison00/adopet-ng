@@ -1,14 +1,13 @@
 <modal-successful-register
   [open]="modalRegisterSuccess"
   [pet]="form.get('nome')?.value"
-  (eventClose)="modalRegisterSuccess = false"
+  (eventClose)="redirect()"
 />
 
 <div class="box-form">
   <form
     [formGroup]="form"
     enctype="multipart/form-data"
-    (ngSubmit)="onEnviar()"
     #formDir="ngForm"
   >
     <div class="row box-img-input">
@@ -31,6 +30,7 @@
           id="imagem"
           name="imagem"
           accept="image/*"
+          (change)="changeInputImage($event)"
         />
       </div>
       <div class="boxin">
@@ -41,7 +41,17 @@
           "
           type="select"
           labelSelect="Espécie"
-          [options]="petsMaisComuns"
+          [options]="[
+          'Cachorro',
+          'Gato',
+          'Peixe',
+          'Pássaro',
+          'Coelho',
+          'Hamster',
+          'Tartaruga',
+          'Réptil',
+          'Furão'
+        ]"
         />
         <app-input
           [isInvalid]="
