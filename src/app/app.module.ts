@@ -31,6 +31,7 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { MyPetsInterestPageComponent } from './pages/my-pets-interest-page/my-pets-interest-page.component';
 import { LoadingPageComponent } from './components/loading-page/loading-page.component';
 import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { LoadingSpinnerComponent } from './components/loading-spinner/loading-sp
     FormsModule,
     ReactiveFormsModule,
     NgxMaskDirective,
-    NgxMaskPipe
+    NgxMaskPipe,
+    HttpClientModule
   ],
   providers: [provideNgxMask()],
   bootstrap: [AppComponent]
