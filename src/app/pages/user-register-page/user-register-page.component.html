@@ -52,6 +52,7 @@
             myMask="000.000.000-00"
             placeholder="Cpf"
           />
+          <span *ngIf="cpfAlreadyExists" class="alert">CPF já existe</span>
           <app-input
             formControlName="email"
             [isInvalid]="
@@ -60,6 +61,7 @@
                 : false
             "
             placeholder="Email"
+            (input)="cpfAlreadyExists = false"
           />
           <app-input
             formControlName="telefone"
@@ -151,6 +153,7 @@
             "
             placeholder="Usuário"
           />
+          <span *ngIf="usernameAlreadyExists" class="alert">Username já existe</span>
           <app-input
             formControlName="senha"
             [isInvalid]="

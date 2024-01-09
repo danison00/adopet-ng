@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { map, switchMap, takeUntil } from 'rxjs';
+import { ExistsService } from 'src/app/service/exists.service';
+import { HumanService } from 'src/app/service/human.service';
 
 @Component({
   selector: 'app-user-register-page',
@@ -12,10 +16,14 @@ export class UserRegisterPageComponent {
   formDadosPessoais!: FormGroup;
   formEndereco!: FormGroup;
   formLogin!: FormGroup;
-  forms!: FormGroup[] ;
+  forms!: FormGroup[];
+
+  cpfAlreadyExists = false;
+  usernameAlreadyExists = false;
 
 
-  constructor(fb: FormBuilder) {
+
+  constructor(fb: FormBuilder, private existsServ: ExistsService, private humanServ: HumanService, private router: Router) {
     this.formDadosPessoais = fb.group({
       nome: ['', [Validators.required, Validators.minLength(5)]],
       idade: [, Validators.required],
@@ -38,15 +46,29 @@ export class UserRegisterPageComponent {
     this.forms = [this.formDadosPessoais, this.formEndereco, this.formLogin];
   }
   next() {
-    
-    if(this.forms[this.step].valid){
-      this.step = this.step + 1;
-      this.managerSteps()
-      return;
+
+    this.formDadosPessoais.valueChanges.subscribe({
+      next: () => {
+        this.cpfAlreadyExists = false;
+
+      }
+    });
+
+    if (this.forms[this.step].valid) {
+
+      if (this.step === 0 || this.step === 1) {
+        this.cpfNonExists().subscribe({
+          next: () => {
+            this.step = this.step + 1;
+            this.managerSteps()
+          },
+          error: (error) => {
+            this.cpfAlreadyExists = true;
+          }
+        });
+      }
+
     }
-
-    this.forms[this.step]
-
   }
   back() {
     this.step = this.step - 1;
@@ -68,13 +90,53 @@ export class UserRegisterPageComponent {
 
     }
   }
+  cpfNonExists() {
+
+    return this.existsServ.cpfExists(this.formDadosPessoais.get('cpf')?.value);
+  }
+  usernameNonExists() {
+
+    return this.existsServ.usernameNonExists(this.formLogin.get('username')?.value)
+  }
   sendForm() {
-    
-    if(this.formLogin.valid){
-      console.log("enviando...");
-      return;
-    }
-    console.log("formulário inválido");
-    
+
+    this.formDadosPessoais.valueChanges.subscribe({
+      next: () => {
+        this.usernameAlreadyExists = false;
+
+      }
+    });
+
+    const address = {
+      street: this.formEndereco.get('rua')?.value,
+      number: this.formEndereco.get('numero')?.value,
+      neighborhood: this.formEndereco.get('bairro')?.value,
+      cep: this.formEndereco.get('cep')?.value,
+      city: this.formEndereco.get('cidade')?.value,
+      state: this.formEndereco.get('estado')?.value
+    };
+
+    const human = {
+      name: this.formDadosPessoais.get('nome')?.value,
+      age: this.formDadosPessoais.get('idade')?.value,
+      cpf: this.formDadosPessoais.get('cpf')?.value,
+      telephone: this.formDadosPessoais.get('telefone')?.value,
+      email: this.formDadosPessoais.get('email')?.value,
+      adress: address
+    };
+
+    this.humanServ.createHuman(human).subscribe({
+        next: ()=>{
+          alert("conta criada!")
+          this.router.navigate(['/login']);
+
+        },
+        error: (error)=>{
+          alert("Erro")
+        }
+      });
+
+
+
   }
 }
